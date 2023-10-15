@@ -82,6 +82,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -257,6 +258,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // vector icons & GIF
+    implementation project(':react-native-vector-icons')
+    implementation 'com.facebook.fresco:animated-gif:2.5.0'
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
