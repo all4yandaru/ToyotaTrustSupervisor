@@ -76,15 +76,15 @@ function MyTabBar({state, descriptors, navigation}) {
 }
 const checkLogo = label => {
   if (label == 'Home') {
-    return require('../asset/home.png');
+    return require('../asset/Icons/home.png');
   } else if (label == 'Tracking') {
-    return require('../asset/tracking.png');
+    return require('../asset/Icons/tracking.png');
   } else if (label == 'Riwayat') {
-    return require('../asset/riwayat.png');
+    return require('../asset/Icons/riwayat.png');
   } else if (label == 'Insentif') {
-    return require('../asset/insentif.png');
+    return require('../asset/Icons/insentif.png');
   } else if (label == 'Profil') {
-    return require('../asset/profil.png');
+    return require('../asset/Icons/profil.png');
   }
 };
 
