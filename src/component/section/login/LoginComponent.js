@@ -11,6 +11,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import {Colors} from '../../../styles';
 
 const LoginComponent = () => {
+  console.log('test');
   return (
     <View style={styles.container}>
       <ScrollView>
