@@ -1,3 +1,19 @@
+import React, {Component} from 'react';
+import {
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  Dimensions,
+} from 'react-native';
+import {Colors} from '../../../styles';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {TextBold, TextRegular} from '../../global/Text';
+import {InputText} from '../../global/InputText';
+import * as Progress from 'react-native-progress';
+
 const InsentifComponent = () => {
   return (
     // <View>
