@@ -12,7 +12,7 @@ import {Colors} from '../../../styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {TextBold, TextRegular, TextMedium} from '../../global/Text';
 
-const HasilCekHargaKendaraan = () => {
+const HasilCekHargaKendaraanComponent = () => {
   return (
     // <View>
     <ScrollView Style={{flexGrow: 1}}>
@@ -191,7 +191,7 @@ const HasilCekHargaKendaraan = () => {
   );
 };
 
-export default HasilCekHargaKendaraan;
+export default HasilCekHargaKendaraanComponent;
 
 const styles = StyleSheet.create({
   lineStyle: {
