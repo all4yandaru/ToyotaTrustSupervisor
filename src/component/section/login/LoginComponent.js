@@ -5,10 +5,11 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  TextInput,
 } from 'react-native';
 import React from 'react';
-import {TextInput} from 'react-native-gesture-handler';
 import {Colors} from '../../../styles';
+import {InputText, TextBold, TextRegular} from '../../global';
 
 const LoginComponent = () => {
   return (
@@ -24,9 +25,10 @@ const LoginComponent = () => {
               source={require('../../../asset/Icons/emaillogo.png')}
               style={styles.inputimg}
             />
-            <TextInput
-              placeholder="Alamat Email"
+            <InputText
+              placeholderText="Alamat Email"
               placeholderTextColor={Colors.DARK_BLUE}
+              style={{borderWidth: 0}}
             />
           </View>
           <View style={styles.inputbox}>
@@ -34,11 +36,11 @@ const LoginComponent = () => {
               source={require('../../../asset/Icons/lock.png')}
               style={styles.inputimg}
             />
-            <TextInput
-              placeholder="Password"
+            <InputText
+              placeholderText="Password"
               placeholderTextColor={Colors.DARK_BLUE}
-              color={Colors.DARK_BLUE}
-              secureTextEntry={true}
+              isPassword={true}
+              style={{borderWidth: 0}}
             />
           </View>
           <View
@@ -48,14 +50,16 @@ const LoginComponent = () => {
               justifyContent: 'flex-end',
               marginRight: 30,
             }}>
-            <Text style={styles.resetpw}>Reset Password</Text>
+            <TouchableOpacity>
+              <TextRegular style={styles.resetpw} text="Reset Password" />
+            </TouchableOpacity>
           </View>
           <TouchableOpacity style={styles.btn}>
-            <Text style={styles.btntext}>LOGIN</Text>
+            <TextBold style={styles.btntext} text="LOGIN" />
           </TouchableOpacity>
         </View>
         <View style={styles.card}>
-          <Text style={styles.cardtext}>Digital Approval</Text>
+          <TextBold style={styles.cardtext} text="Digital Approval" />
         </View>
       </ScrollView>
     </View>
