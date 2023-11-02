@@ -9,7 +9,7 @@ const dropdownIcon = () => {
   return <Icon name="chevron-small-down" size={25} />;
 };
 
-const CekHargaKendaraan = (navigation, route) => {
+const CekHargaKendaraanComponent = (navigation, route) => {
   const brandData = ['Toyota', 'Hyundai', 'Mitsubishi', 'Honda'];
   const modelData = ['Model A', 'Model B', 'Model C', 'Model D'];
   const tipeData = ['Tipe A', 'Tipe B', 'Tipe C', 'Tipe D'];
@@ -166,7 +166,7 @@ const CekHargaKendaraan = (navigation, route) => {
   );
 };
 
-export default CekHargaKendaraan;
+export default CekHargaKendaraanComponent;
 
 const styles = StyleSheet.create({
   container: {

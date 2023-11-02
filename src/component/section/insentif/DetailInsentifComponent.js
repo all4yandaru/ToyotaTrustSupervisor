@@ -12,7 +12,7 @@ import {Colors} from '../../../styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {TextBold, TextRegular} from '../../global/Text';
 
-const InsentifDetailComponent = () => {
+const DetailInsentifComponent = () => {
   return (
     // <View>
     <ScrollView Style={{flexGrow: 1}}>
@@ -325,7 +325,7 @@ const InsentifDetailComponent = () => {
   );
 };
 
-export default InsentifDetailComponent;
+export default DetailInsentifComponent;
 
 const styles = StyleSheet.create({
   topContent: {

@@ -11,7 +11,7 @@ import {Colors} from '../../../styles';
 import Icon from 'react-native-vector-icons/Feather';
 import AppIcon from 'react-native-vector-icons/FontAwesome';
 
-const DetailTradeIn = ({navigation, route}) => {
+const SummaryDetailTradeIn = ({navigation, route}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -221,7 +221,7 @@ const DetailTradeIn = ({navigation, route}) => {
   );
 };
 
-export default DetailTradeIn;
+export default SummaryDetailTradeIn;
 
 const styles = StyleSheet.create({
   container: {

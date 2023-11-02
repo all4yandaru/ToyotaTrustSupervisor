@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Modal, StyleSheet, TouchableOpacity, Text} from 'react-native';
-import {TextBold, TextMedium} from '../../global';
-import {Colors} from '../../../styles';
+import {TextBold, TextMedium} from '../global';
+import {Colors} from '../../styles';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 const RadioButton = ({selected, onSelect}) => {
