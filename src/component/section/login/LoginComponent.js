@@ -11,7 +11,7 @@ import React from 'react';
 import {Colors} from '../../../styles';
 import {InputText, TextBold, TextRegular} from '../../global';
 
-const LoginComponent = () => {
+const LoginComponent = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -54,7 +54,9 @@ const LoginComponent = () => {
               <TextRegular style={styles.resetpw} text="Reset Password" />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('MainRouting')}
+            style={styles.btn}>
             <TextBold style={styles.btntext} text="LOGIN" />
           </TouchableOpacity>
         </View>

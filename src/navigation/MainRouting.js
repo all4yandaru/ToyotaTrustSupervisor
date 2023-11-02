@@ -11,18 +11,16 @@ import {NavigationContainer} from '@react-navigation/native';
 const Tab = createBottomTabNavigator();
 const MainRouting = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        tabBar={props => <MyTabBar {...props} />}
-        screenOptions={{headerShown: false}}
-        initialRouteName="Home">
-        <Tab.Screen name="Home" component={HomeRouting} />
-        <Tab.Screen name="Tracking" component={TrackingRouting} />
-        <Tab.Screen name="Riwayat" component={RiwayatRouting} />
-        <Tab.Screen name="Insentif" component={InsentifRouting} />
-        <Tab.Screen name="Profil" component={ProfilRouting} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator
+      tabBar={props => <MyTabBar {...props} />}
+      screenOptions={{headerShown: false}}
+      initialRouteName="Home">
+      <Tab.Screen name="Home" component={HomeRouting} />
+      <Tab.Screen name="Tracking" component={TrackingRouting} />
+      <Tab.Screen name="Riwayat" component={RiwayatRouting} />
+      <Tab.Screen name="Insentif" component={InsentifRouting} />
+      <Tab.Screen name="Profil" component={ProfilRouting} />
+    </Tab.Navigator>
   );
 };
 
