@@ -1,6 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Tracking from '../screen/Tracking';
+import ToolsTradeIn from '../component/section/homeAndTracking/ToolsTradeInComponent';
 
 const Stack = createStackNavigator();
 const TrackingRouting = () => {
@@ -9,6 +10,7 @@ const TrackingRouting = () => {
       screenOptions={{headerShown: false}}
       initialRouteName="TrackingScreen">
       <Stack.Screen name="TrackingScreen" component={Tracking} />
+      <Stack.Screen name="ToolsTradeIn" component={ToolsTradeIn} />
     </Stack.Navigator>
   );
 };
