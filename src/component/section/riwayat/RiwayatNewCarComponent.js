@@ -24,7 +24,14 @@ const RiwayatNewCarComponent = () => {
           <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
             AVANZA G 2.0
           </Text>
-          <View style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}} />
+          <View
+            style={{
+              height: 1,
+              borderTopWidth: 1,
+              borderStyle: 'dashed',
+              borderColor: Colors.MEDIUM_GRAY,
+            }}
+          />
         </View>
         <View
           style={{

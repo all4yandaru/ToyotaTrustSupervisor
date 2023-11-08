@@ -2,10 +2,10 @@ import {Text, View} from 'react-native';
 import React, {Component} from 'react';
 import HomeComponent from '../component/section/homeAndTracking/HomeComponent';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
-      <HomeComponent />
+      <HomeComponent navigation={navigation} />
     </View>
   );
 };

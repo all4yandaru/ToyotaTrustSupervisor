@@ -46,6 +46,7 @@ const RiwayatComponent = () => {
                 justifyContent: 'space-between',
               }}>
               <TextInput
+                placeholder="Telusuri..."
                 style={{
                   flex: 1,
                   height: 48,
@@ -54,9 +55,7 @@ const RiwayatComponent = () => {
                   borderTopLeftRadius: 8,
                   borderBottomLeftRadius: 8,
                   backgroundColor: Colors.WHITE,
-                }}>
-                Telusuri...
-              </TextInput>
+                }}></TextInput>
               <View
                 style={{
                   width: 48,
@@ -101,7 +100,7 @@ const RiwayatComponent = () => {
           <TouchableOpacity
             style={{
               flex: 1,
-              height: 36,
+              height: 40,
               borderWidth: 1,
               marginTop: -15,
               borderColor: Colors.GRAY,
@@ -114,7 +113,8 @@ const RiwayatComponent = () => {
             onPress={() => setActiveMenu('Trade In')}>
             <Text
               style={{
-                color: activeMenu == 'Trade In' ? Colors.BLUE : Colors.GRAY,
+                color: activeMenu == 'Trade In' ? Colors.BLUE : Colors.BLACK,
+                fontWeight: activeMenu == 'Trade In' ? 'bold' : '400',
               }}>
               Trade In
             </Text>
@@ -123,7 +123,7 @@ const RiwayatComponent = () => {
           <TouchableOpacity
             style={{
               flex: 1,
-              height: 36,
+              height: 40,
               borderWidth: 1,
               marginTop: -15,
               borderColor: Colors.GRAY,
@@ -136,7 +136,8 @@ const RiwayatComponent = () => {
             onPress={() => setActiveMenu('New Car')}>
             <Text
               style={{
-                color: activeMenu == 'New Car' ? Colors.BLUE : Colors.GRAY,
+                color: activeMenu == 'New Car' ? Colors.BLUE : Colors.BLACK,
+                fontWeight: activeMenu == 'New Car' ? 'bold' : '400',
               }}>
               New Car
             </Text>
