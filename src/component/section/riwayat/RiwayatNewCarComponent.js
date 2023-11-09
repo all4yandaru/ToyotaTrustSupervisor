@@ -1,8 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Colors} from '../../../styles';
+import {useNavigation} from '@react-navigation/native';
 
 const RiwayatNewCarComponent = () => {
+  const navigation = useNavigation();
   return (
     <View style={{flex: 1, padding: 16}}>
       <View
@@ -35,170 +37,208 @@ const RiwayatNewCarComponent = () => {
         </View>
         <View
           style={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
+            height: 150,
+            borderRadius: 8,
+            padding: 10,
+            marginBottom: 10,
+            backgroundColor: Colors.WHITE,
+            justifyContent: 'space-around',
           }}>
-          <View>
-            <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
-              Handoko
+          <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+            <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
+            <Text style={{fontSize: 14, fontWeight: '500'}}>
+              Sen, 17 Sep 2018 - 10.30
             </Text>
-            <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+          </View>
+          <View>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
+              AVANZA G 2.0
+            </Text>
+            <View
+              style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}}
+            />
           </View>
           <View
             style={{
-              height: 25,
-              padding: 6,
-              borderRadius: 4,
-              justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: Colors.GREEN,
+              justifyContent: 'space-between',
+              flexDirection: 'row',
             }}>
-            <Text style={{fontSize: 10, color: Colors.WHITE}}>Deal</Text>
+            <View>
+              <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
+                Handoko
+              </Text>
+              <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+            </View>
+            <View
+              style={{
+                height: 25,
+                padding: 6,
+                borderRadius: 4,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: Colors.GREEN,
+              }}>
+              <Text style={{fontSize: 10, color: Colors.WHITE}}>Deal</Text>
+            </View>
           </View>
         </View>
       </View>
 
-      <View
-        style={{
-          height: 150,
-          borderRadius: 8,
-          padding: 10,
-          marginBottom: 10,
-          backgroundColor: Colors.WHITE,
-          justifyContent: 'space-around',
-        }}>
-        <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-          <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
-          <Text style={{fontSize: 14, fontWeight: '500'}}>
-            Sen, 17 Sep 2018 - 10.30
-          </Text>
-        </View>
-        <View>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
-            AVANZA G 2.0
-          </Text>
-          <View style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}} />
-        </View>
+      <TouchableOpacity
+      // onPress={()=> }
+      >
         <View
           style={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
+            height: 150,
+            borderRadius: 8,
+            padding: 10,
+            marginBottom: 10,
+            backgroundColor: Colors.WHITE,
+            justifyContent: 'space-around',
           }}>
-          <View>
-            <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
-              Handoko
+          <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+            <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
+            <Text style={{fontSize: 14, fontWeight: '500'}}>
+              Sen, 17 Sep 2018 - 10.30
             </Text>
-            <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+          </View>
+          <View>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
+              AVANZA G 2.0
+            </Text>
+            <View
+              style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}}
+            />
           </View>
           <View
             style={{
-              height: 25,
-              padding: 6,
-              borderRadius: 4,
-              justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: Colors.RED,
+              justifyContent: 'space-between',
+              flexDirection: 'row',
             }}>
-            <Text style={{fontSize: 10, color: Colors.WHITE}}>No Deal</Text>
+            <View>
+              <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
+                Handoko
+              </Text>
+              <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+            </View>
+            <View
+              style={{
+                height: 25,
+                padding: 6,
+                borderRadius: 4,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: Colors.RED,
+              }}>
+              <Text style={{fontSize: 10, color: Colors.WHITE}}>No Deal</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
 
-      <View
-        style={{
-          height: 150,
-          borderRadius: 8,
-          padding: 10,
-          marginBottom: 10,
-          backgroundColor: Colors.WHITE,
-          justifyContent: 'space-around',
-        }}>
-        <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-          <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
-          <Text style={{fontSize: 14, fontWeight: '500'}}>
-            Sen, 17 Sep 2018 - 10.30
-          </Text>
-        </View>
-        <View>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
-            AVANZA G 2.0
-          </Text>
-          <View style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}} />
-        </View>
+      <TouchableOpacity>
         <View
           style={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
+            height: 150,
+            borderRadius: 8,
+            padding: 10,
+            marginBottom: 10,
+            backgroundColor: Colors.WHITE,
+            justifyContent: 'space-around',
           }}>
-          <View>
-            <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
-              Handoko
+          <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+            <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
+            <Text style={{fontSize: 14, fontWeight: '500'}}>
+              Sen, 17 Sep 2018 - 10.30
             </Text>
-            <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+          </View>
+          <View>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
+              AVANZA G 2.0
+            </Text>
+            <View
+              style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}}
+            />
           </View>
           <View
             style={{
-              height: 25,
-              padding: 6,
-              borderRadius: 4,
-              justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: Colors.GREEN,
+              justifyContent: 'space-between',
+              flexDirection: 'row',
             }}>
-            <Text style={{fontSize: 10, color: Colors.WHITE}}>Deal</Text>
+            <View>
+              <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
+                Handoko
+              </Text>
+              <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+            </View>
+            <View
+              style={{
+                height: 25,
+                padding: 6,
+                borderRadius: 4,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: Colors.GREEN,
+              }}>
+              <Text style={{fontSize: 10, color: Colors.WHITE}}>Deal</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
 
-      <View
-        style={{
-          height: 150,
-          borderRadius: 8,
-          padding: 10,
-          marginBottom: 10,
-          backgroundColor: Colors.WHITE,
-          justifyContent: 'space-around',
-        }}>
-        <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-          <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
-          <Text style={{fontSize: 14, fontWeight: '500'}}>
-            Sen, 17 Sep 2018 - 10.30
-          </Text>
-        </View>
-        <View>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
-            AVANZA G 2.0
-          </Text>
-          <View style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}} />
-        </View>
+      <TouchableOpacity>
         <View
           style={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
+            height: 150,
+            borderRadius: 8,
+            padding: 10,
+            marginBottom: 10,
+            backgroundColor: Colors.WHITE,
+            justifyContent: 'space-around',
           }}>
-          <View>
-            <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
-              Handoko
+          <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+            <Text style={{fontSize: 14}}>TR - 092018 - 246</Text>
+            <Text style={{fontSize: 14, fontWeight: '500'}}>
+              Sen, 17 Sep 2018 - 10.30
             </Text>
-            <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+          </View>
+          <View>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 15}}>
+              AVANZA G 2.0
+            </Text>
+            <View
+              style={{borderBottomWidth: 1, borderBottomColor: '#CCD3DD'}}
+            />
           </View>
           <View
             style={{
-              height: 25,
-              padding: 6,
-              borderRadius: 4,
-              justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: Colors.GREEN,
+              justifyContent: 'space-between',
+              flexDirection: 'row',
             }}>
-            <Text style={{fontSize: 10, color: Colors.WHITE}}>Deal</Text>
+            <View>
+              <Text style={{fontSize: 14, fontWeight: 'bold', marginBottom: 3}}>
+                Handoko
+              </Text>
+              <Text style={{fontSize: 10}}>Cabang Kelapa Gading</Text>
+            </View>
+            <View
+              style={{
+                height: 25,
+                padding: 6,
+                borderRadius: 4,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: Colors.GREEN,
+              }}>
+              <Text style={{fontSize: 10, color: Colors.WHITE}}>Deal</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
