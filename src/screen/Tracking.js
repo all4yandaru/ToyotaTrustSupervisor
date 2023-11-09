@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 import TrackingComponent from '../component/section/homeAndTracking/TrackingComponent';
 
-const Tracking = () => {
+const Tracking = ({navigation, route}) => {
   return (
     <View style={{flex: 1}}>
-      <TrackingComponent />
+      <TrackingComponent navigation={navigation} />
     </View>
   );
 };

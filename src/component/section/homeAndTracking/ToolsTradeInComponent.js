@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Icon from 'react-native-vector-icons/Feather';
 import Icons from 'react-native-vector-icons/Feather';
 import {TextRegular, TextMedium, TextBold} from '../../global';
 import {Colors} from '../../../styles';
@@ -12,7 +13,7 @@ import {
 } from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 
-export default function ToolTradeInComponent() {
+export default function ToolTradeInComponent({navigation}) {
   const activeOpacity = 0.8;
 
   const FirstRoute = () => {
@@ -299,8 +300,8 @@ export default function ToolTradeInComponent() {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <TouchableOpacity>
-            <Icons name="arrow-left" size={24} color={Colors.BLACK} />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon name="arrow-left" size={24} color={Colors.BLACK} />
           </TouchableOpacity>
           <TextBold color={Colors.DARK_BLUE} text="Tools Trade In" size={16} />
         </View>
@@ -354,7 +355,8 @@ export default function ToolTradeInComponent() {
                 padding: 10,
                 alignItems: 'center',
               },
-            ]}>
+            ]}
+            onPress={() => navigation.navigate('DetailAppraisal')}>
             <TextMedium color="white" text="Lihat Detail Appraisal" />
             <Icons name="arrow-right" color={Colors.WHITE} size={12} />
           </TouchableOpacity>
