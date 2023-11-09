@@ -56,7 +56,6 @@ const ProfilComponent = ({navigation, route}) => {
               source={require('../../../asset/Image/foto.png')}
             />
             <Icon
-              onPress={() => navigation.navigate('')}
               name="login"
               size={16}
               color="#FFF"
@@ -77,7 +76,7 @@ const ProfilComponent = ({navigation, route}) => {
         </View>
         <View style={{marginTop: 16}}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('CekHargaKendaraanComponent')}
+            onPress={() => navigation.navigate('CekHargaKendaraan')}
             style={{
               weight: 328,
               height: 48,
@@ -120,7 +119,7 @@ const ProfilComponent = ({navigation, route}) => {
             <Text style={styles.boldText}>Data Diri</Text>
             <Text
               onPress={() => {
-                navigation.navigate('EditDataDiriComponent');
+                navigation.navigate('EditDataDiri');
               }}
               style={{color: '#287AE5', fontSize: 12, fontStyle: 'italic'}}>
               Edit Data Diri
@@ -166,7 +165,7 @@ const ProfilComponent = ({navigation, route}) => {
             <Text style={styles.boldText}>Data Rekening</Text>
             <Text
               onPress={() => {
-                navigation.navigate('EditDataRekeningComponent');
+                navigation.navigate('EditDataRekening');
               }}
               style={{color: '#287AE5', fontSize: 12, fontStyle: 'italic'}}>
               Edit Data Rekening
@@ -207,7 +206,7 @@ const ProfilComponent = ({navigation, route}) => {
             <Text style={styles.boldText}>Dokumen</Text>
             <Text
               onPress={() => {
-                navigation.navigate('EditDokumenComponent');
+                navigation.navigate('EditDokumen');
               }}
               style={{color: '#287AE5', fontSize: 12, fontStyle: 'italic'}}>
               Edit Dokumen

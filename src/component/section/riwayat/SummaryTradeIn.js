@@ -10,11 +10,24 @@ import {TextBold, TextMedium, TextRegular, InputText} from '../../global';
 import {Colors} from '../../../styles';
 import Icon from 'react-native-vector-icons/Feather';
 import AppIcon from 'react-native-vector-icons/FontAwesome';
-import TradeInDetail from './TradeInDetail';
-
-const SummaryTradeIn = (navigation, route) => {
+const SummaryTradeIn = ({navigation, route}) => {
   return (
     <View style={styles.container}>
+      <View
+        style={{
+          padding: 16,
+          paddingRight: '40%',
+          flexDirection: 'row',
+          backgroundColor: 'white',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginBottom: 5,
+        }}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-left" size={24} color={Colors.BLACK} />
+        </TouchableOpacity>
+        <TextBold color={Colors.DARK_BLUE} text="Summary Trade In" size={16} />
+      </View>
       <View style={styles.headInfo}>
         <TextMedium
           text="TR-092018-246"
@@ -51,8 +64,7 @@ const SummaryTradeIn = (navigation, route) => {
           </View>
           <TouchableOpacity
             style={styles.btnFull}
-            // onPress={() => navigation.navigate('')}
-          >
+            onPress={() => navigation.navigate('DetailTradeIn')}>
             <TextRegular
               text="Lihat Detail Appraisal"
               size={14}

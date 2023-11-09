@@ -1,11 +1,293 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Icon from 'react-native-vector-icons/Feather';
 import Icons from 'react-native-vector-icons/Feather';
 import {TextRegular, TextMedium, TextBold} from '../../global';
 import {Colors} from '../../../styles';
-import {ScrollView, TouchableOpacity, View, StyleSheet} from 'react-native';
+import {
+  ScrollView,
+  TouchableOpacity,
+  View,
+  StyleSheet,
+  useWindowDimensions,
+  Dimensions,
+} from 'react-native';
+import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 
-export default function ToolTradeInComponent() {
+export default function ToolTradeInComponent({navigation}) {
   const activeOpacity = 0.8;
+
+  const FirstRoute = () => {
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: Colors.GRAY,
+          paddingTop: 12,
+          paddingHorizontal: 20,
+        }}>
+        <TouchableOpacity style={styles.body}>
+          <TextBold
+            size={12}
+            color={Colors.LIGHT_GREEN}
+            text="Approved by OM "
+          />
+          <View style={{height: 3}} />
+          <View
+            style={{
+              flexDirection: 'row',
+              width: '70%',
+              justifyContent: 'space-between',
+            }}>
+            <View
+              style={{
+                flex: 0.5,
+                borderRightWidth: 1,
+                borderColor: Colors.MEDIUM_GRAY,
+                alignItems: 'flex-start',
+              }}>
+              <TextRegular
+                size={10}
+                color={Colors.DARK_BLUE}
+                text="Sen, 17 Sep 2018 - 10:30"
+              />
+            </View>
+            <View
+              style={{
+                flex: 0.5,
+                alignItems: 'flex-start',
+                marginLeft: 10,
+              }}>
+              <TextRegular
+                size={10}
+                color={Colors.DARK_BLUE}
+                text="Helmi Chandra"
+              />
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.body}>
+          <TextBold
+            color={Colors.DARK_BLUE}
+            size={16}
+            text="Request Diskon BOD"
+          />
+          <View style={{height: 8}} />
+          <TextBold
+            size={12}
+            color={Colors.LIGHT_GREEN}
+            text="Approved by OM "
+          />
+          <View style={{height: 3}} />
+          <View
+            style={{
+              flexDirection: 'row',
+              width: '70%',
+              justifyContent: 'space-between',
+            }}>
+            <View
+              style={{
+                flex: 0.5,
+                borderRightWidth: 1,
+                borderColor: Colors.MEDIUM_GRAY,
+                alignItems: 'flex-start',
+              }}>
+              <TextRegular
+                size={10}
+                color={Colors.DARK_BLUE}
+                text="Sen, 17 Sep 2018 - 10:30"
+              />
+            </View>
+            <View
+              style={{
+                flex: 0.5,
+                alignItems: 'flex-start',
+                marginLeft: 10,
+              }}>
+              <TextRegular
+                size={10}
+                color={Colors.DARK_BLUE}
+                text="Helmi Chandra"
+              />
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.body}>
+          <TextBold color={Colors.DARK_BLUE} size={16} text="Request MRP" />
+          <View style={{height: 8}} />
+          <TextBold size={12} color={Colors.RED} text="Rejected by OM " />
+          <View style={{height: 3}} />
+          <View
+            style={{
+              flexDirection: 'row',
+              width: '70%',
+              justifyContent: 'space-between',
+            }}>
+            <View
+              style={{
+                flex: 0.5,
+                borderRightWidth: 1,
+                borderColor: Colors.MEDIUM_GRAY,
+                alignItems: 'flex-start',
+              }}>
+              <TextRegular
+                size={10}
+                color={Colors.DARK_BLUE}
+                text="Sen, 17 Sep 2018 - 10:30"
+              />
+            </View>
+            <View
+              style={{
+                flex: 0.5,
+                alignItems: 'flex-start',
+                marginLeft: 10,
+              }}>
+              <TextRegular
+                size={10}
+                color={Colors.DARK_BLUE}
+                text="Helmi Chandra"
+              />
+            </View>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+  const SecondRoute = () => (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: Colors.GRAY,
+        paddingTop: 12,
+        paddingHorizontal: 20,
+      }}>
+      <TouchableOpacity style={styles.body}>
+        <TextBold size={12} color={Colors.LIGHT_GREEN} text="Approved by OM " />
+        <View style={{height: 3}} />
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '70%',
+            justifyContent: 'space-between',
+          }}>
+          <View
+            style={{
+              flex: 0.5,
+              borderRightWidth: 1,
+              borderColor: Colors.MEDIUM_GRAY,
+              alignItems: 'flex-start',
+            }}>
+            <TextRegular
+              size={10}
+              color={Colors.DARK_BLUE}
+              text="Sen, 17 Sep 2018 - 10:30"
+            />
+          </View>
+          <View
+            style={{
+              flex: 0.5,
+              alignItems: 'flex-start',
+              marginLeft: 10,
+            }}>
+            <TextRegular
+              size={10}
+              color={Colors.DARK_BLUE}
+              text="Helmi Chandra"
+            />
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.body}>
+        <TextBold
+          color={Colors.DARK_BLUE}
+          size={16}
+          text="Request Diskon BOD"
+        />
+        <View style={{height: 8}} />
+        <TextBold size={12} color={Colors.LIGHT_GREEN} text="Approved by OM " />
+        <View style={{height: 3}} />
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '70%',
+            justifyContent: 'space-between',
+          }}>
+          <View
+            style={{
+              flex: 0.5,
+              borderRightWidth: 1,
+              borderColor: Colors.MEDIUM_GRAY,
+              alignItems: 'flex-start',
+            }}>
+            <TextRegular
+              size={10}
+              color={Colors.DARK_BLUE}
+              text="Sen, 17 Sep 2018 - 10:30"
+            />
+          </View>
+          <View
+            style={{
+              flex: 0.5,
+              alignItems: 'flex-start',
+              marginLeft: 10,
+            }}>
+            <TextRegular
+              size={10}
+              color={Colors.DARK_BLUE}
+              text="Helmi Chandra"
+            />
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.body}>
+        <TextBold color={Colors.DARK_BLUE} size={16} text="Request MRP" />
+        <View style={{height: 8}} />
+        <TextBold size={12} color={Colors.RED} text="Rejected by OM " />
+        <View style={{height: 3}} />
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '70%',
+            justifyContent: 'space-between',
+          }}>
+          <View
+            style={{
+              flex: 0.5,
+              borderRightWidth: 1,
+              borderColor: Colors.MEDIUM_GRAY,
+              alignItems: 'flex-start',
+            }}>
+            <TextRegular
+              size={10}
+              color={Colors.DARK_BLUE}
+              text="Sen, 17 Sep 2018 - 10:30"
+            />
+          </View>
+          <View
+            style={{
+              flex: 0.5,
+              alignItems: 'flex-start',
+              marginLeft: 10,
+            }}>
+            <TextRegular
+              size={10}
+              color={Colors.DARK_BLUE}
+              text="Helmi Chandra"
+            />
+          </View>
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+  const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
+
+  const layout = useWindowDimensions();
+
+  const [index, setIndex] = useState(0);
+  const [routes] = useState([
+    {key: 'first', title: 'Trade In'},
+    {key: 'second', title: 'New Car'},
+  ]);
+
   return (
     <View style={{flex: 1, backgroundColor: Colors.GRAY}}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -18,8 +300,8 @@ export default function ToolTradeInComponent() {
             alignItems: 'center',
             justifyContent: 'space-between',
           }}>
-          <TouchableOpacity>
-            <Icons name="arrow-left" size={24} color={Colors.BLACK} />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon name="arrow-left" size={24} color={Colors.BLACK} />
           </TouchableOpacity>
           <TextBold color={Colors.DARK_BLUE} text="Tools Trade In" size={16} />
         </View>
@@ -73,12 +355,12 @@ export default function ToolTradeInComponent() {
                 padding: 10,
                 alignItems: 'center',
               },
-            ]}>
+            ]}
+            onPress={() => navigation.navigate('DetailAppraisal')}>
             <TextMedium color="white" text="Lihat Detail Appraisal" />
-            <Icon name="arrow-right" color={Colors.WHITE} size={12} />
+            <Icons name="arrow-right" color={Colors.WHITE} size={12} />
           </TouchableOpacity>
         </View>
-
         <View style={{height: 16}} />
         <View style={styles.body}>
           <View style={styles.bodySection}>
@@ -102,7 +384,6 @@ export default function ToolTradeInComponent() {
           <View style={{height: 16}} />
         </View>
         <View style={{height: 16}} />
-
         <View style={styles.body}>
           <TextBold
             size={14}
@@ -128,7 +409,6 @@ export default function ToolTradeInComponent() {
           </View>
         </View>
         <View style={{height: 16}} />
-
         <View style={styles.body}>
           <TextBold size={14} color={Colors.DARK_BLUE} text="Diskon" />
         </View>
@@ -153,7 +433,6 @@ export default function ToolTradeInComponent() {
           </View>
         </View>
         <View style={{height: 16}} />
-
         <View style={styles.body}>
           <TextBold
             size={14}
@@ -345,147 +624,33 @@ export default function ToolTradeInComponent() {
           color={Colors.DARK_BLUE}
           text="History Log"
         />
-        <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-          <TouchableOpacity
-            activeOpacity={activeOpacity}
-            style={[styles.body, {flex: 0.475, alignItems: 'center'}]}>
-            <TextBold color={Colors.BLUE} size={14} text="Deal" />
-          </TouchableOpacity>
-          <View style={{width: 1}} />
-          <TouchableOpacity
-            activeOpacity={activeOpacity}
-            style={[styles.body, {flex: 0.475, alignItems: 'center'}]}>
-            <TextRegular color={Colors.DARK_BLUE} size={14} text="Request" />
-          </TouchableOpacity>
-        </View>
-        <View style={{height: 16}} />
-        <View style={styles.body}>
-          <TextBold
-            size={12}
-            color={Colors.LIGHT_GREEN}
-            text="Approved by OM "
-          />
-          <View style={{height: 3}} />
-          <View
-            style={{
-              flexDirection: 'row',
-              width: '70%',
-              justifyContent: 'space-between',
-            }}>
-            <View
+        <TabView
+          style={{
+            backgroundColor: Colors.GRAY,
+            height: Dimensions.get('window').height,
+          }}
+          navigationState={{index, routes}}
+          renderScene={renderScene}
+          onIndexChange={setIndex}
+          initialLayout={{width: layout.width}}
+          renderTabBar={props => (
+            <TabBar
+              {...props}
+              activeColor={Colors.BLUE}
+              inactiveColor={Colors.BLACK}
+              indicatorStyle={{
+                backgroundColor: Colors.WHITE,
+              }}
               style={{
-                flex: 0.5,
-                borderRightWidth: 1,
-                borderColor: Colors.MEDIUM_GRAY,
-                alignItems: 'flex-start',
-              }}>
-              <TextRegular
-                size={10}
-                color={Colors.DARK_BLUE}
-                text="Sen, 17 Sep 2018 - 10:30"
-              />
-            </View>
-            <View
-              style={{
-                flex: 0.5,
-                alignItems: 'flex-start',
-                marginLeft: 10,
-              }}>
-              <TextRegular
-                size={10}
-                color={Colors.DARK_BLUE}
-                text="Helmi Chandra"
-              />
-            </View>
-          </View>
-        </View>
-        <View style={{height: 16}} />
-        <View style={styles.body}>
-          <TextBold
-            color={Colors.DARK_BLUE}
-            size={16}
-            text="Request Diskon BOD"
-          />
-          <View style={{height: 8}} />
-          <TextBold
-            size={12}
-            color={Colors.LIGHT_GREEN}
-            text="Approved by OM "
-          />
-          <View style={{height: 3}} />
-          <View
-            style={{
-              flexDirection: 'row',
-              width: '70%',
-              justifyContent: 'space-between',
-            }}>
-            <View
-              style={{
-                flex: 0.5,
-                borderRightWidth: 1,
-                borderColor: Colors.MEDIUM_GRAY,
-                alignItems: 'flex-start',
-              }}>
-              <TextRegular
-                size={10}
-                color={Colors.DARK_BLUE}
-                text="Sen, 17 Sep 2018 - 10:30"
-              />
-            </View>
-            <View
-              style={{
-                flex: 0.5,
-                alignItems: 'flex-start',
-                marginLeft: 10,
-              }}>
-              <TextRegular
-                size={10}
-                color={Colors.DARK_BLUE}
-                text="Helmi Chandra"
-              />
-            </View>
-          </View>
-        </View>
-        <View style={{height: 16}} />
-        <View style={styles.body}>
-          <TextBold color={Colors.DARK_BLUE} size={16} text="Request MRP" />
-          <View style={{height: 8}} />
-          <TextBold size={12} color={Colors.RED} text="Rejected by OM " />
-          <View style={{height: 3}} />
-          <View
-            style={{
-              flexDirection: 'row',
-              width: '70%',
-              justifyContent: 'space-between',
-            }}>
-            <View
-              style={{
-                flex: 0.5,
-                borderRightWidth: 1,
-                borderColor: Colors.MEDIUM_GRAY,
-                alignItems: 'flex-start',
-              }}>
-              <TextRegular
-                size={10}
-                color={Colors.DARK_BLUE}
-                text="Sen, 17 Sep 2018 - 10:30"
-              />
-            </View>
-            <View
-              style={{
-                flex: 0.5,
-                alignItems: 'flex-start',
-                marginLeft: 10,
-              }}>
-              <TextRegular
-                size={10}
-                color={Colors.DARK_BLUE}
-                text="Helmi Chandra"
-              />
-            </View>
-          </View>
-        </View>
-        <View style={{height: 30}} />
+                backgroundColor: Colors.WHITE,
+                width: '90%',
+                borderRadius: 8,
+                alignSelf: 'center',
+                marginTop: 12,
+              }}
+            />
+          )}
+        />
       </ScrollView>
     </View>
   );
@@ -497,6 +662,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     alignSelf: 'center',
+    marginTop: 15,
   },
   bodySection: {
     flexDirection: 'row',

@@ -1,4 +1,19 @@
-const InsentifComponent = () => {
+import React from 'react';
+import {Colors} from '../../../styles';
+import {
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+  StyleSheet,
+  Dimensions,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import {TextBold, TextMedium, TextRegular, InputText} from '../../global';
+import * as Progress from 'react-native-progress';
+
+const InsentifComponent = ({navigation}) => {
   return (
     // <View>
     <ScrollView Style={{flexGrow: 1}}>
@@ -76,144 +91,146 @@ const InsentifComponent = () => {
       <View style={styles.itemContent}>
         <TextBold text="Cabang Bintaro" size={16} color={Colors.DARK_BLUE} />
       </View>
-      <View style={[styles.ListStyle]}>
-        <View style={{alignItems: 'flex-start'}}>
-          <TextRegular
-            text="TR-092018-246"
-            size={12}
-            color={Colors.MEDIUM_GRAY}
-            style={{marginRight: 10}}
-          />
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="Sen, 17 Sep 2018 - 10:30"
-            size={12}
-            color={Colors.DARK_BLUE}
-          />
-          <TextBold
-            text="CREATE"
-            size={10}
-            color={Colors.WHITE}
+      <TouchableOpacity onPress={() => navigation.navigate('DetailInsentif')}>
+        <View style={[styles.ListStyle]}>
+          <View style={{alignItems: 'flex-start'}}>
+            <TextRegular
+              text="TR-092018-246"
+              size={12}
+              color={Colors.MEDIUM_GRAY}
+              style={{marginRight: 10}}
+            />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text="Sen, 17 Sep 2018 - 10:30"
+              size={12}
+              color={Colors.DARK_BLUE}
+            />
+            <TextBold
+              text="CREATE"
+              size={10}
+              color={Colors.WHITE}
+              style={{
+                marginRight: 10,
+                backgroundColor: '#287AE5',
+                borderRadius: 5,
+                paddingVertical: 4,
+                paddingHorizontal: 4,
+              }}
+            />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text=" Target Bulanan"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{marginTop: 15}}
+            />
+            <TextBold
+              text="Rp 1.000.000"
+              size={14}
+              color={Colors.DARK_BLUE}
+              style={{
+                marginRight: 10,
+                marginTop: 15,
+                paddingBottom: 10,
+              }}
+            />
+          </View>
+          <View
             style={{
-              marginRight: 10,
-              backgroundColor: '#287AE5',
-              borderRadius: 5,
-              paddingVertical: 4,
-              paddingHorizontal: 4,
-            }}
-          />
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              borderTopWidth: 1,
+              borderTopColor: '#EDEDED',
+            }}>
+            <TextRegular
+              text="Nama Salesman"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{marginTop: 13}}
+            />
+            <TextBold
+              text="Kukuh Hadi"
+              size={14}
+              color={Colors.DARK_BLUE}
+              style={{
+                marginRight: 10,
+                marginTop: 13,
+              }}
+            />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text="Cabang Auto2000"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{marginTop: 4}}
+            />
+            <TextBold
+              text="Ciledug"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{
+                marginRight: 10,
+                marginTop: 4,
+              }}
+            />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text="Tipe Mobil"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{marginTop: 4}}
+            />
+            <TextBold
+              text="Toyota Agya G A/T TRD 2015"
+              size={14}
+              color={Colors.DARK_BLUE}
+              style={{
+                marginRight: 10,
+                marginTop: 4,
+              }}
+            />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text="Nomor Polisi"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{marginTop: 4}}
+            />
+            <TextBold
+              text="B 1234 TES"
+              size={14}
+              color={Colors.DARK_BLUE}
+              style={{
+                marginRight: 10,
+                marginTop: 4,
+              }}
+            />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text="Nama Customer"
+              size={12}
+              color={Colors.DARK_BLUE}
+              style={{marginTop: 4}}
+            />
+            <TextBold
+              text="Aji Bayu Wirrotama"
+              size={14}
+              color={Colors.DARK_BLUE}
+              style={{
+                marginRight: 10,
+                marginTop: 4,
+              }}
+            />
+          </View>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text=" Target Bulanan"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{marginTop: 15}}
-          />
-          <TextBold
-            text="Rp 1.000.000"
-            size={14}
-            color={Colors.DARK_BLUE}
-            style={{
-              marginRight: 10,
-              marginTop: 15,
-              paddingBottom: 10,
-            }}
-          />
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            borderTopWidth: 1,
-            borderTopColor: '#EDEDED',
-          }}>
-          <TextRegular
-            text="Nama Salesman"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{marginTop: 13}}
-          />
-          <TextBold
-            text="Kukuh Hadi"
-            size={14}
-            color={Colors.DARK_BLUE}
-            style={{
-              marginRight: 10,
-              marginTop: 13,
-            }}
-          />
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="Cabang Auto2000"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{marginTop: 4}}
-          />
-          <TextBold
-            text="Ciledug"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{
-              marginRight: 10,
-              marginTop: 4,
-            }}
-          />
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="Tipe Mobil"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{marginTop: 4}}
-          />
-          <TextBold
-            text="Toyota Agya G A/T TRD 2015"
-            size={14}
-            color={Colors.DARK_BLUE}
-            style={{
-              marginRight: 10,
-              marginTop: 4,
-            }}
-          />
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="Nomor Polisi"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{marginTop: 4}}
-          />
-          <TextBold
-            text="B 1234 TES"
-            size={14}
-            color={Colors.DARK_BLUE}
-            style={{
-              marginRight: 10,
-              marginTop: 4,
-            }}
-          />
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="Nama Customer"
-            size={12}
-            color={Colors.DARK_BLUE}
-            style={{marginTop: 4}}
-          />
-          <TextBold
-            text="Aji Bayu Wirrotama"
-            size={14}
-            color={Colors.DARK_BLUE}
-            style={{
-              marginRight: 10,
-              marginTop: 4,
-            }}
-          />
-        </View>
-      </View>
+      </TouchableOpacity>
       {/* LIST CABANG 2 =======================================================================*/}
       <View style={styles.itemContent}>
         <TextBold

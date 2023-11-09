@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  Touchable,
   TouchableOpacity,
   View,
   useWindowDimensions,
@@ -17,8 +18,84 @@ import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import FilterHomeModal from '../../modal/FilterHomeModal';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome6';
 
-const FirstRoute = () => {
-  return (
+export default function HomeComponent({navigation}) {
+  const [filterModal, setFilterModal] = useState(false);
+
+  const FirstRoute = () => {
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: Colors.GRAY,
+          paddingTop: 12,
+          paddingHorizontal: 20,
+        }}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('Tracking', {screen: 'ToolsTradeIn'})
+          }
+          style={{
+            padding: 12,
+            backgroundColor: Colors.WHITE,
+            borderRadius: 8,
+            borderWidth: 1,
+            borderColor: Colors.GRAY,
+            height: 125,
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              text="TR-092018-246"
+              color={Colors.DARK_BLUE}
+              size={12}
+            />
+            <TextMedium
+              text="Sen, 17 Sep 2018 - 10.30"
+              color={Colors.DARK_BLUE}
+              size={12}
+            />
+          </View>
+          <TextBold
+            text="Avanza G AT 2016"
+            style={{marginTop: 8}}
+            color={Colors.DARK_BLUE}
+            size={14}
+          />
+          <View
+            style={{
+              borderStyle: 'dashed',
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+              height: 1,
+              marginVertical: 10,
+            }}
+          />
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View>
+              <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
+              <TextRegular
+                text="Cabang Kelapa Gading"
+                color={Colors.DARK_BLUE}
+                size={10}
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: Colors.BLUE,
+                width: 74,
+                height: 20,
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: 6,
+                marginTop: 10,
+              }}>
+              <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
+            </View>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+  const SecondRoute = () => (
     <View
       style={{
         flex: 1,
@@ -26,137 +103,70 @@ const FirstRoute = () => {
         paddingTop: 12,
         paddingHorizontal: 20,
       }}>
-      <View
-        style={{
-          padding: 12,
-          backgroundColor: Colors.WHITE,
-          borderRadius: 8,
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-          height: 125,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="TR-092018-246"
-            color={Colors.DARK_BLUE}
-            size={12}
-          />
-          <TextMedium
-            text="Sen, 17 Sep 2018 - 10.30"
-            color={Colors.DARK_BLUE}
-            size={12}
-          />
-        </View>
-        <TextBold
-          text="Avanza G AT 2016"
-          style={{marginTop: 8}}
-          color={Colors.DARK_BLUE}
-          size={14}
-        />
+      <TouchableOpacity onPress={() => navigation.navigate('ToolTradeIn')}>
         <View
           style={{
-            borderStyle: 'dashed',
+            padding: 12,
+            backgroundColor: Colors.WHITE,
+            borderRadius: 8,
             borderWidth: 1,
             borderColor: Colors.GRAY,
-            height: 1,
-            marginVertical: 10,
-          }}
-        />
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <View>
-            <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
+            height: 125,
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <TextRegular
-              text="Cabang Kelapa Gading"
+              text="TR-092018-246"
               color={Colors.DARK_BLUE}
-              size={10}
+              size={12}
+            />
+            <TextMedium
+              text="Sen, 17 Sep 2018 - 10.30"
+              color={Colors.DARK_BLUE}
+              size={12}
             />
           </View>
+          <TextBold
+            text="Avanza G AT 2016"
+            style={{marginTop: 8}}
+            color={Colors.DARK_BLUE}
+            size={14}
+          />
           <View
             style={{
-              backgroundColor: Colors.BLUE,
-              width: 74,
-              height: 20,
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 6,
-              marginTop: 10,
-            }}>
-            <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
+              borderStyle: 'dashed',
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+              height: 1,
+              marginVertical: 10,
+            }}
+          />
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View>
+              <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
+              <TextRegular
+                text="Cabang Kelapa Gading"
+                color={Colors.DARK_BLUE}
+                size={10}
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: Colors.BLUE,
+                width: 74,
+                height: 20,
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: 6,
+                marginTop: 10,
+              }}>
+              <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
-};
-const SecondRoute = () => (
-  <View
-    style={{
-      flex: 1,
-      backgroundColor: Colors.GRAY,
-      paddingTop: 12,
-      paddingHorizontal: 20,
-    }}>
-    <View
-      style={{
-        padding: 12,
-        backgroundColor: Colors.WHITE,
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: Colors.GRAY,
-        height: 125,
-      }}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <TextRegular text="TR-092018-246" color={Colors.DARK_BLUE} size={12} />
-        <TextMedium
-          text="Sen, 17 Sep 2018 - 10.30"
-          color={Colors.DARK_BLUE}
-          size={12}
-        />
-      </View>
-      <TextBold
-        text="Avanza G AT 2016"
-        style={{marginTop: 8}}
-        color={Colors.DARK_BLUE}
-        size={14}
-      />
-      <View
-        style={{
-          borderStyle: 'dashed',
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-          height: 1,
-          marginVertical: 10,
-        }}
-      />
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <View>
-          <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
-          <TextRegular
-            text="Cabang Kelapa Gading"
-            color={Colors.DARK_BLUE}
-            size={10}
-          />
-        </View>
-        <View
-          style={{
-            backgroundColor: Colors.BLUE,
-            width: 74,
-            height: 20,
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 6,
-            marginTop: 10,
-          }}>
-          <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
-        </View>
-      </View>
-    </View>
-  </View>
-);
-const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
-
-export default function HomeComponent() {
-  const [filterModal, setFilterModal] = useState(false);
+  const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
 
   const layout = useWindowDimensions();
 
@@ -165,6 +175,7 @@ export default function HomeComponent() {
     {key: 'first', title: 'Trade In'},
     {key: 'second', title: 'New Car'},
   ]);
+  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -181,11 +192,14 @@ export default function HomeComponent() {
               />
             </View>
             <View style={{position: 'absolute', right: 40, top: 20}}>
-              <FontAwesome5
-                name="bell"
-                size={26}
-                style={{color: Colors.WHITE}}
-              />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Notification')}>
+                <FontAwesome5
+                  name="bell"
+                  size={26}
+                  style={{color: Colors.WHITE}}
+                />
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.statuscard}>
@@ -318,13 +332,12 @@ export default function HomeComponent() {
             <TabBar
               {...props}
               activeColor={Colors.BLUE}
-              inactiveColor={Colors.GRAY}
+              inactiveColor={Colors.BLACK}
               indicatorStyle={{
                 backgroundColor: Colors.WHITE,
               }}
               style={{
                 backgroundColor: Colors.WHITE,
-
                 width: '90%',
                 borderRadius: 8,
                 alignSelf: 'center',

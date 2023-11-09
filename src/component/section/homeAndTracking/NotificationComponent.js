@@ -1,16 +1,25 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import {Colors} from '../../../styles';
 import {TextRegular, TextMedium} from '../../global';
 
-const NotificationComponent = () => {
+const NotificationComponent = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          style={styles.back}
-          source={require('../../../asset/Icons/backblack.png')}
-        />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Image
+            style={styles.back}
+            source={require('../../../asset/Icons/backblack.png')}
+          />
+        </TouchableOpacity>
         <Text style={styles.title}>Notifications</Text>
       </View>
       <ScrollView>

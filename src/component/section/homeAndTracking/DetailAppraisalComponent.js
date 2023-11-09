@@ -21,7 +21,9 @@ const DetailAppraisalComponent = ({route, navigation}) => {
         source={require('../../../asset/Image/background_blue.png')}>
         {/* HEADER ================================================================= */}
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TouchableOpacity style={{alignSelf: 'center'}}>
+          <TouchableOpacity
+            style={{alignSelf: 'center'}}
+            onPress={() => navigation.goBack()}>
             <Icon name="arrow-back-outline" size={16} color={Colors.WHITE} />
           </TouchableOpacity>
           <TextBold text={'Summary'} size={16} color={Colors.WHITE} />
