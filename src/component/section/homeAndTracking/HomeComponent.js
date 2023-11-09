@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  Touchable,
   TouchableOpacity,
   View,
   useWindowDimensions,
@@ -102,65 +103,67 @@ export default function HomeComponent({navigation}) {
         paddingTop: 12,
         paddingHorizontal: 20,
       }}>
-      <View
-        style={{
-          padding: 12,
-          backgroundColor: Colors.WHITE,
-          borderRadius: 8,
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-          height: 125,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            text="TR-092018-246"
-            color={Colors.DARK_BLUE}
-            size={12}
-          />
-          <TextMedium
-            text="Sen, 17 Sep 2018 - 10.30"
-            color={Colors.DARK_BLUE}
-            size={12}
-          />
-        </View>
-        <TextBold
-          text="Avanza G AT 2016"
-          style={{marginTop: 8}}
-          color={Colors.DARK_BLUE}
-          size={14}
-        />
+      <TouchableOpacity onPress={() => navigation.navigate('ToolTradeIn')}>
         <View
           style={{
-            borderStyle: 'dashed',
+            padding: 12,
+            backgroundColor: Colors.WHITE,
+            borderRadius: 8,
             borderWidth: 1,
             borderColor: Colors.GRAY,
-            height: 1,
-            marginVertical: 10,
-          }}
-        />
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <View>
-            <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
+            height: 125,
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <TextRegular
-              text="Cabang Kelapa Gading"
+              text="TR-092018-246"
               color={Colors.DARK_BLUE}
-              size={10}
+              size={12}
+            />
+            <TextMedium
+              text="Sen, 17 Sep 2018 - 10.30"
+              color={Colors.DARK_BLUE}
+              size={12}
             />
           </View>
+          <TextBold
+            text="Avanza G AT 2016"
+            style={{marginTop: 8}}
+            color={Colors.DARK_BLUE}
+            size={14}
+          />
           <View
             style={{
-              backgroundColor: Colors.BLUE,
-              width: 74,
-              height: 20,
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 6,
-              marginTop: 10,
-            }}>
-            <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
+              borderStyle: 'dashed',
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+              height: 1,
+              marginVertical: 10,
+            }}
+          />
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View>
+              <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
+              <TextRegular
+                text="Cabang Kelapa Gading"
+                color={Colors.DARK_BLUE}
+                size={10}
+              />
+            </View>
+            <View
+              style={{
+                backgroundColor: Colors.BLUE,
+                width: 74,
+                height: 20,
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: 6,
+                marginTop: 10,
+              }}>
+              <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
   const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
@@ -172,6 +175,7 @@ export default function HomeComponent({navigation}) {
     {key: 'first', title: 'Trade In'},
     {key: 'second', title: 'New Car'},
   ]);
+  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -188,11 +192,14 @@ export default function HomeComponent({navigation}) {
               />
             </View>
             <View style={{position: 'absolute', right: 40, top: 20}}>
-              <FontAwesome5
-                name="bell"
-                size={26}
-                style={{color: Colors.WHITE}}
-              />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Notification')}>
+                <FontAwesome5
+                  name="bell"
+                  size={26}
+                  style={{color: Colors.WHITE}}
+                />
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.statuscard}>

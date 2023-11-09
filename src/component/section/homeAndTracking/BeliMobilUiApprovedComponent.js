@@ -5,7 +5,7 @@ import {ScrollView, TouchableOpacity, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import Icons from 'react-native-vector-icons/Entypo';
 
-export default function BeliMobilUiApprovedComponent() {
+export default function BeliMobilUiApprovedComponent({navigation}) {
   return (
     <View style={{flex: 1, backgroundColor: Colors.GRAY}}>
       <View
@@ -16,7 +16,7 @@ export default function BeliMobilUiApprovedComponent() {
           alignItems: 'center',
           justifyContent: 'space-between',
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon name="arrow-left" size={24} color={Colors.BLACK} />
         </TouchableOpacity>
         <TextBold color={Colors.DARK_BLUE} text="Beli Mobil" size={16} />

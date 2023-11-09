@@ -12,10 +12,226 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 
-const FirstRoute = () => {
-  return (
+export default function TrackingComponent({navigation}) {
+  const FirstRoute = () => {
+    return (
+      <View>
+        <TouchableOpacity onPress={() => navigation.navigate('ToolsTradeIn')}>
+          <View
+            style={{
+              marginHorizontal: 15,
+              padding: 12,
+              marginTop: 10,
+              backgroundColor: Colors.WHITE,
+              borderRadius: 6,
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+            }}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <TextRegular
+                size={12}
+                color={Colors.DARK_BLUE}
+                text="TR-092018-246"
+              />
+              <TextBold
+                size={12}
+                color={Colors.DARK_BLUE}
+                text="Sen, 17 Sep 2018 - 10:30"
+              />
+            </View>
+            <View style={{height: 8}} />
+            <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
+            <View style={{height: 12}} />
+            <View
+              style={{
+                height: 1,
+                borderTopWidth: 1,
+                borderStyle: 'dashed',
+                borderColor: Colors.MEDIUM_GRAY,
+              }}
+            />
+            <View style={{height: 8}} />
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginTop: 4,
+              }}>
+              <View style={{width: '50%'}}>
+                <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
+                <View style={{height: 2}} />
+                <TextRegular
+                  color={Colors.DARK_BLUE}
+                  size={12}
+                  text="Cabang Kelapa gading"
+                />
+              </View>
+              <View
+                style={{
+                  paddingHorizontal: 10,
+                  height: 30,
+                  backgroundColor: Colors.BLUE,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <TextMedium
+                  size={10}
+                  color={Colors.WHITE}
+                  text="Request Diskon Sudah Terupdate"
+                />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View
+            style={{
+              marginHorizontal: 15,
+              padding: 12,
+              marginTop: 10,
+              backgroundColor: Colors.WHITE,
+              borderRadius: 6,
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+            }}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <TextRegular
+                size={12}
+                color={Colors.DARK_BLUE}
+                text="TR-092018-246"
+              />
+              <TextBold
+                size={12}
+                color={Colors.DARK_BLUE}
+                text="Sen, 17 Sep 2018 - 10:30"
+              />
+            </View>
+            <View style={{height: 8}} />
+            <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
+            <View style={{height: 12}} />
+            <View
+              style={{
+                height: 1,
+                borderTopWidth: 1,
+                borderStyle: 'dashed',
+                borderColor: Colors.MEDIUM_GRAY,
+              }}
+            />
+            <View style={{height: 8}} />
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginTop: 4,
+              }}>
+              <View style={{width: '50%'}}>
+                <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
+                <View style={{height: 2}} />
+                <TextRegular
+                  color={Colors.DARK_BLUE}
+                  size={12}
+                  text="Cabang Kelapa gading"
+                />
+              </View>
+              <View
+                style={{
+                  paddingHorizontal: 10,
+                  height: 30,
+                  backgroundColor: Colors.YELLOW,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <TextMedium
+                  size={10}
+                  color={Colors.WHITE}
+                  text="Request MRO Sudah Terupdate"
+                />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View
+            style={{
+              marginHorizontal: 15,
+              padding: 12,
+              marginTop: 10,
+              backgroundColor: Colors.WHITE,
+              borderRadius: 6,
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+            }}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <TextRegular
+                size={12}
+                color={Colors.DARK_BLUE}
+                text="TR-092018-246"
+              />
+              <TextBold
+                size={12}
+                color={Colors.DARK_BLUE}
+                text="Sen, 17 Sep 2018 - 10:30"
+              />
+            </View>
+            <View style={{height: 8}} />
+            <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
+            <View style={{height: 12}} />
+            <View
+              style={{
+                height: 1,
+                borderTopWidth: 1,
+                borderStyle: 'dashed',
+                borderColor: Colors.MEDIUM_GRAY,
+              }}
+            />
+            <View style={{height: 8}} />
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginTop: 4,
+              }}>
+              <View style={{width: '50%'}}>
+                <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
+                <View style={{height: 2}} />
+                <TextRegular
+                  color={Colors.DARK_BLUE}
+                  size={12}
+                  text="Cabang Kelapa gading"
+                />
+              </View>
+              <View
+                style={{
+                  paddingHorizontal: 10,
+                  height: 30,
+                  backgroundColor: Colors.BLACK,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <TextMedium
+                  size={10}
+                  color={Colors.WHITE}
+                  text="Sedang Dalam Request"
+                />
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+  const SecondRoute = () => (
     <View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('BeliMobil')}>
         <View
           style={{
             marginHorizontal: 15,
@@ -70,7 +286,7 @@ const FirstRoute = () => {
               style={{
                 paddingHorizontal: 10,
                 height: 30,
-                backgroundColor: Colors.BLUE,
+                backgroundColor: Colors.RED,
                 borderRadius: 10,
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -79,75 +295,6 @@ const FirstRoute = () => {
                 size={10}
                 color={Colors.WHITE}
                 text="Request Diskon Sudah Terupdate"
-              />
-            </View>
-          </View>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <View
-          style={{
-            marginHorizontal: 15,
-            padding: 12,
-            marginTop: 10,
-            backgroundColor: Colors.WHITE,
-            borderRadius: 6,
-            borderWidth: 1,
-            borderColor: Colors.GRAY,
-          }}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TextRegular
-              size={12}
-              color={Colors.DARK_BLUE}
-              text="TR-092018-246"
-            />
-            <TextBold
-              size={12}
-              color={Colors.DARK_BLUE}
-              text="Sen, 17 Sep 2018 - 10:30"
-            />
-          </View>
-          <View style={{height: 8}} />
-          <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
-          <View style={{height: 12}} />
-          <View
-            style={{
-              height: 1,
-              borderTopWidth: 1,
-              borderStyle: 'dashed',
-              borderColor: Colors.MEDIUM_GRAY,
-            }}
-          />
-          <View style={{height: 8}} />
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginTop: 4,
-            }}>
-            <View style={{width: '50%'}}>
-              <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
-              <View style={{height: 2}} />
-              <TextRegular
-                color={Colors.DARK_BLUE}
-                size={12}
-                text="Cabang Kelapa gading"
-              />
-            </View>
-            <View
-              style={{
-                paddingHorizontal: 10,
-                height: 30,
-                backgroundColor: Colors.YELLOW,
-                borderRadius: 10,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <TextMedium
-                size={10}
-                color={Colors.WHITE}
-                text="Request MRO Sudah Terupdate"
               />
             </View>
           </View>
@@ -222,293 +369,149 @@ const FirstRoute = () => {
           </View>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity>
+        <View
+          style={{
+            marginHorizontal: 15,
+            padding: 12,
+            marginTop: 10,
+            backgroundColor: Colors.WHITE,
+            borderRadius: 6,
+            borderWidth: 1,
+            borderColor: Colors.GRAY,
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              size={12}
+              color={Colors.DARK_BLUE}
+              text="TR-092018-246"
+            />
+            <TextBold
+              size={12}
+              color={Colors.DARK_BLUE}
+              text="Sen, 17 Sep 2018 - 10:30"
+            />
+          </View>
+          <View style={{height: 8}} />
+          <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
+          <View style={{height: 12}} />
+          <View
+            style={{
+              height: 1,
+              borderTopWidth: 1,
+              borderStyle: 'dashed',
+              borderColor: Colors.MEDIUM_GRAY,
+            }}
+          />
+          <View style={{height: 8}} />
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginTop: 4,
+            }}>
+            <View style={{width: '50%'}}>
+              <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
+              <View style={{height: 2}} />
+              <TextRegular
+                color={Colors.DARK_BLUE}
+                size={12}
+                text="Cabang Kelapa gading"
+              />
+            </View>
+            <View
+              style={{
+                paddingHorizontal: 10,
+                height: 30,
+                backgroundColor: Colors.RED,
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <TextMedium
+                size={10}
+                color={Colors.WHITE}
+                text="Request Diskon Sudah Terupdate"
+              />
+            </View>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <View
+          style={{
+            marginHorizontal: 15,
+            padding: 12,
+            marginTop: 10,
+            backgroundColor: Colors.WHITE,
+            borderRadius: 6,
+            borderWidth: 1,
+            borderColor: Colors.GRAY,
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <TextRegular
+              size={12}
+              color={Colors.DARK_BLUE}
+              text="TR-092018-246"
+            />
+            <TextBold
+              size={12}
+              color={Colors.DARK_BLUE}
+              text="Sen, 17 Sep 2018 - 10:30"
+            />
+          </View>
+          <View style={{height: 8}} />
+          <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
+          <View style={{height: 12}} />
+          <View
+            style={{
+              height: 1,
+              borderTopWidth: 1,
+              borderStyle: 'dashed',
+              borderColor: Colors.MEDIUM_GRAY,
+            }}
+          />
+          <View style={{height: 8}} />
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginTop: 4,
+            }}>
+            <View style={{width: '50%'}}>
+              <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
+              <View style={{height: 2}} />
+              <TextRegular
+                color={Colors.DARK_BLUE}
+                size={12}
+                text="Cabang Kelapa gading"
+              />
+            </View>
+            <View
+              style={{
+                paddingHorizontal: 10,
+                height: 30,
+                backgroundColor: Colors.RED,
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <TextMedium
+                size={10}
+                color={Colors.WHITE}
+                text="Request Diskon Sudah Terupdate"
+              />
+            </View>
+          </View>
+        </View>
+      </TouchableOpacity>
     </View>
   );
-};
-const SecondRoute = () => (
-  <View>
-    <TouchableOpacity>
-      <View
-        style={{
-          marginHorizontal: 15,
-          padding: 12,
-          marginTop: 10,
-          backgroundColor: Colors.WHITE,
-          borderRadius: 6,
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="TR-092018-246"
-          />
-          <TextBold
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="Sen, 17 Sep 2018 - 10:30"
-          />
-        </View>
-        <View style={{height: 8}} />
-        <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
-        <View style={{height: 12}} />
-        <View
-          style={{
-            height: 1,
-            borderTopWidth: 1,
-            borderStyle: 'dashed',
-            borderColor: Colors.MEDIUM_GRAY,
-          }}
-        />
-        <View style={{height: 8}} />
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginTop: 4,
-          }}>
-          <View style={{width: '50%'}}>
-            <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
-            <View style={{height: 2}} />
-            <TextRegular
-              color={Colors.DARK_BLUE}
-              size={12}
-              text="Cabang Kelapa gading"
-            />
-          </View>
-          <View
-            style={{
-              paddingHorizontal: 10,
-              height: 30,
-              backgroundColor: Colors.RED,
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <TextMedium
-              size={10}
-              color={Colors.WHITE}
-              text="Request Diskon Sudah Terupdate"
-            />
-          </View>
-        </View>
-      </View>
-    </TouchableOpacity>
-    <TouchableOpacity>
-      <View
-        style={{
-          marginHorizontal: 15,
-          padding: 12,
-          marginTop: 10,
-          backgroundColor: Colors.WHITE,
-          borderRadius: 6,
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="TR-092018-246"
-          />
-          <TextBold
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="Sen, 17 Sep 2018 - 10:30"
-          />
-        </View>
-        <View style={{height: 8}} />
-        <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
-        <View style={{height: 12}} />
-        <View
-          style={{
-            height: 1,
-            borderTopWidth: 1,
-            borderStyle: 'dashed',
-            borderColor: Colors.MEDIUM_GRAY,
-          }}
-        />
-        <View style={{height: 8}} />
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginTop: 4,
-          }}>
-          <View style={{width: '50%'}}>
-            <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
-            <View style={{height: 2}} />
-            <TextRegular
-              color={Colors.DARK_BLUE}
-              size={12}
-              text="Cabang Kelapa gading"
-            />
-          </View>
-          <View
-            style={{
-              paddingHorizontal: 10,
-              height: 30,
-              backgroundColor: Colors.BLACK,
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <TextMedium
-              size={10}
-              color={Colors.WHITE}
-              text="Sedang Dalam Request"
-            />
-          </View>
-        </View>
-      </View>
-    </TouchableOpacity>
-    <TouchableOpacity>
-      <View
-        style={{
-          marginHorizontal: 15,
-          padding: 12,
-          marginTop: 10,
-          backgroundColor: Colors.WHITE,
-          borderRadius: 6,
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="TR-092018-246"
-          />
-          <TextBold
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="Sen, 17 Sep 2018 - 10:30"
-          />
-        </View>
-        <View style={{height: 8}} />
-        <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
-        <View style={{height: 12}} />
-        <View
-          style={{
-            height: 1,
-            borderTopWidth: 1,
-            borderStyle: 'dashed',
-            borderColor: Colors.MEDIUM_GRAY,
-          }}
-        />
-        <View style={{height: 8}} />
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginTop: 4,
-          }}>
-          <View style={{width: '50%'}}>
-            <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
-            <View style={{height: 2}} />
-            <TextRegular
-              color={Colors.DARK_BLUE}
-              size={12}
-              text="Cabang Kelapa gading"
-            />
-          </View>
-          <View
-            style={{
-              paddingHorizontal: 10,
-              height: 30,
-              backgroundColor: Colors.RED,
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <TextMedium
-              size={10}
-              color={Colors.WHITE}
-              text="Request Diskon Sudah Terupdate"
-            />
-          </View>
-        </View>
-      </View>
-    </TouchableOpacity>
-    <TouchableOpacity>
-      <View
-        style={{
-          marginHorizontal: 15,
-          padding: 12,
-          marginTop: 10,
-          backgroundColor: Colors.WHITE,
-          borderRadius: 6,
-          borderWidth: 1,
-          borderColor: Colors.GRAY,
-        }}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <TextRegular
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="TR-092018-246"
-          />
-          <TextBold
-            size={12}
-            color={Colors.DARK_BLUE}
-            text="Sen, 17 Sep 2018 - 10:30"
-          />
-        </View>
-        <View style={{height: 8}} />
-        <TextBold color={Colors.DARK_BLUE} text="Avanza G2.0" />
-        <View style={{height: 12}} />
-        <View
-          style={{
-            height: 1,
-            borderTopWidth: 1,
-            borderStyle: 'dashed',
-            borderColor: Colors.MEDIUM_GRAY,
-          }}
-        />
-        <View style={{height: 8}} />
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginTop: 4,
-          }}>
-          <View style={{width: '50%'}}>
-            <TextBold color={Colors.DARK_BLUE} size={12} text="Handoko" />
-            <View style={{height: 2}} />
-            <TextRegular
-              color={Colors.DARK_BLUE}
-              size={12}
-              text="Cabang Kelapa gading"
-            />
-          </View>
-          <View
-            style={{
-              paddingHorizontal: 10,
-              height: 30,
-              backgroundColor: Colors.RED,
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <TextMedium
-              size={10}
-              color={Colors.WHITE}
-              text="Request Diskon Sudah Terupdate"
-            />
-          </View>
-        </View>
-      </View>
-    </TouchableOpacity>
-  </View>
-);
 
-const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
+  const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
 
-export default function TrackingComponent() {
   const layout = useWindowDimensions();
   const [index, setIndex] = useState(0);
   const [routes] = useState([
