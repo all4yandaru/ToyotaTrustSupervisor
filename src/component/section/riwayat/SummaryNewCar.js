@@ -2,14 +2,29 @@ import React from 'react';
 import {View, TouchableOpacity, ScrollView, StyleSheet} from 'react-native';
 import {TextBold, TextMedium, TextRegular} from '../../global/Text';
 import {Colors} from '../../../styles';
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/Feather';
 
-const SummaryNewCar = (navigation, route) => {
+const SummaryNewCar = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
         {/* <View
         style={styles.nnotifNoDeal}> */}
+        <View
+          style={{
+            padding: 16,
+            paddingRight: '40%',
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: 5,
+          }}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon name="arrow-left" size={24} color={Colors.BLACK} />
+          </TouchableOpacity>
+          <TextBold color={Colors.DARK_BLUE} text="Summary New Car" size={16} />
+        </View>
         <View style={styles.notifDeal}>
           <TextMedium text="Deal" size={15} color={Colors.WHITE} />
           {/* <TextMedium text="No Deal" size={15} color={Colors.WHITE} /> */}

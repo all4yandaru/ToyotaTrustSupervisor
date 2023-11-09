@@ -15,6 +15,21 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
+        <View
+          style={{
+            padding: 16,
+            paddingRight: '40%',
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: 5,
+          }}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Icon name="arrow-left" size={24} color={Colors.BLACK} />
+          </TouchableOpacity>
+          <TextBold color={Colors.DARK_BLUE} text="Detail Trade In" size={16} />
+        </View>
         {/* <View style={styles.notifNoDeal}> */}
         <View style={styles.notifDeal}>
           <TextMedium text="Deal" size={15} color={Colors.WHITE} />

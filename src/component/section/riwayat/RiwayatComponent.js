@@ -14,7 +14,7 @@ import {TextBold} from '../../global';
 import RiwayatNewCarComponent from './RiwayatNewCarComponent';
 import RiwayatTradeInComponent from './RiwayatTradeInComponent';
 
-const RiwayatComponent = () => {
+const RiwayatComponent = ({navigation}) => {
   const [activeMenu, setActiveMenu] = useState('Trade In');
 
   return (
