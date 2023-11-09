@@ -33,7 +33,7 @@ const EditDokumen = ({navigation}) => {
               name="arrow-back"
               size={25}
               color="#002558"
-              onPress={() => navigation.navigate('ProfilComponent')}></Icon>
+              onPress={() => navigation.goBack()}></Icon>
           </TouchableOpacity>
           <View
             style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -83,7 +83,7 @@ const EditDokumen = ({navigation}) => {
               borderRadius: 4,
             }}>
             <TouchableOpacity
-              onPress={() => navigation.navigate('Profil')}
+              // onPress={() => navigation.navigate('Profil')}
               style={{
                 weight: 280,
                 height: 32,
@@ -141,7 +141,7 @@ const EditDokumen = ({navigation}) => {
               source={require('./image/npwp.png')}
             /> */}
             <TouchableOpacity
-              onPress={() => navigation.navigate('Profil')}
+              // onPress={() => navigation.navigate('Profil')}
               style={{
                 weight: 280,
                 height: 32,
@@ -173,7 +173,7 @@ const EditDokumen = ({navigation}) => {
             marginTop: 5,
           }}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('ProfilComponent')}
+            onPress={() => navigation.navigate('ProfilScreen')}
             style={{
               weight: 328,
               height: 36,

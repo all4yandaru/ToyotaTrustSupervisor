@@ -44,7 +44,7 @@ const EditDataDiri = ({navigation}) => {
             name="arrow-back"
             size={25}
             color="#002558"
-            onPress={() => navigation.navigate('ProfilComponent')}></Icon>
+            onPress={() => navigation.goBack()}></Icon>
         </TouchableOpacity>
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <Text style={{fontSize: 16, color: '#002558', fontWeight: 'bold'}}>

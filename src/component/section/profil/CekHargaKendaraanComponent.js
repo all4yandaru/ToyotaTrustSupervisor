@@ -3,13 +3,14 @@ import {View, TouchableOpacity, ScrollView, StyleSheet} from 'react-native';
 import {TextBold, TextMedium, TextRegular} from '../../global/Text';
 import {Colors} from '../../../styles';
 import Icon from 'react-native-vector-icons/Entypo';
+import Feather from 'react-native-vector-icons/Feather';
 import SelectDropdown from 'react-native-select-dropdown';
 
 const dropdownIcon = () => {
   return <Icon name="chevron-small-down" size={25} />;
 };
 
-const CekHargaKendaraanComponent = (navigation, route) => {
+const CekHargaKendaraanComponent = ({navigation, route}) => {
   const brandData = ['Toyota', 'Hyundai', 'Mitsubishi', 'Honda'];
   const modelData = ['Model A', 'Model B', 'Model C', 'Model D'];
   const tipeData = ['Tipe A', 'Tipe B', 'Tipe C', 'Tipe D'];
@@ -17,6 +18,25 @@ const CekHargaKendaraanComponent = (navigation, route) => {
   return (
     <View style={styles.container}>
       <ScrollView>
+        <View
+          style={{
+            padding: 16,
+            paddingRight: '40%',
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: 5,
+          }}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Feather name="arrow-left" size={24} color={Colors.DARK_BLUE} />
+          </TouchableOpacity>
+          <TextBold
+            color={Colors.DARK_BLUE}
+            text="Cek Harga Kendaraan"
+            size={16}
+          />
+        </View>
         <View style={styles.content}>
           <TextMedium text="Brand" size={14} color={Colors.DARK_BLUE} />
           <SelectDropdown
@@ -130,6 +150,7 @@ const CekHargaKendaraanComponent = (navigation, route) => {
             <TextBold text="0/50" size={15} color={Colors.DARK_BLUE} />
           </View>
           <TouchableOpacity
+            onPress={() => navigation.navigate('HasilCekHarga')}
             style={{
               backgroundColor: Colors.BLUE,
               paddingVertical: 8,
