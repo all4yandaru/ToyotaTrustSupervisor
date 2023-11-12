@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import LoginComponent from '../component/section/login/LoginComponent';
+import LoginComponent from '../../component/section/login/LoginComponent';
 
 const Login = ({navigation, route}) => {
   console.log('Login');

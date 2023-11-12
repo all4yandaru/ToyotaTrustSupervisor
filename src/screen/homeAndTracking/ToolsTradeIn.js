@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import ToolsTradeInComponent from '../component/section/homeAndTracking/ToolsTradeInComponent';
+import ToolsTradeInComponent from '../../component/section/homeAndTracking/ToolsTradeInComponent';
 
 const ToolsTradeIn = ({navigation}) => {
   return (

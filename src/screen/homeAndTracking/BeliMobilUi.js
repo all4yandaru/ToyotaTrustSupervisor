@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import BeliMobilComponent from '../component/section/homeAndTracking/BeliMobilUiApprovedComponent';
+import BeliMobilComponent from '../../component/section/homeAndTracking/BeliMobilUiApprovedComponent';
 
 const BeliMobil = ({navigation}) => {
   return (

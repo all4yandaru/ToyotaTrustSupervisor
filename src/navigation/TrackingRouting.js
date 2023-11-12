@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Tracking from '../screen/Tracking';
-import ToolsTradeIn from '../screen/ToolsTradeIn';
-import DetailAppraisal from '../screen/DetailAppraisal';
-import BeliMobil from '../screen/BeliMobilUi';
+import Tracking from '../screen/homeAndTracking/Tracking';
+import ToolsTradeIn from '../screen/homeAndTracking/ToolsTradeIn';
+import DetailAppraisal from '../screen/homeAndTracking/DetailAppraisal';
+import BeliMobil from '../screen/homeAndTracking/BeliMobilUi';
 
 const Stack = createStackNavigator();
 const TrackingRouting = () => {

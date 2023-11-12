@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Insentif from '../screen/Insentif';
-import DetailInsentif from '../screen/DetailInsentif';
+import Insentif from '../screen/insentif/Insentif';
+import DetailInsentif from '../screen/insentif/DetailInsentif';
 
 const Stack = createStackNavigator();
 const InsentifRouting = () => {

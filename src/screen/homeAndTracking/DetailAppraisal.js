@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import DetailAppraisalComponent from '../component/section/homeAndTracking/DetailAppraisalComponent';
+import DetailAppraisalComponent from '../../component/section/homeAndTracking/DetailAppraisalComponent';
 
 const DetailAppraisal = ({navigation}) => {
   return (

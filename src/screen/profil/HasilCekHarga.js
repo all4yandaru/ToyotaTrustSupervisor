@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import HasilCekHargaComponent from '../component/section/profil/HasilCekHargaComponent';
+import HasilCekHargaComponent from '../../component/section/profil/HasilCekHargaComponent';
 
 const HasilCekHarga = ({navigation}) => {
   return (

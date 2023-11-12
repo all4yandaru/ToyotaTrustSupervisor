@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Profil from '../screen/Profil';
+import Profil from '../screen/profil/Profil';
 import {useNavigation} from '@react-navigation/native';
 import CekHargaKendaraanComponent from '../component/section/profil/CekHargaKendaraanComponent';
 import HasilCekHargaComponent from '../component/section/profil/HasilCekHargaComponent';

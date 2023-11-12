@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import EditDataDiriComponent from '../component/section/profil/EditDataDiriComponent';
+import EditDataDiriComponent from '../../component/section/profil/EditDataDiriComponent';
 
 const EditDataDiri = ({navigation}) => {
   return (

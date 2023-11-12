@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
-import ProfilComponent from '../component/section/profil/ProfilComponent';
+import ProfilComponent from '../../component/section/profil/ProfilComponent';
 
 const Profil = ({navigation, route}) => {
   return (

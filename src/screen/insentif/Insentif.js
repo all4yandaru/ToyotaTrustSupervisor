@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
-import InsentifComponent from '../component/section/insentif/InsentifComponent';
+import InsentifComponent from '../../component/section/insentif/InsentifComponent';
 
 const Insentif = ({navigation, route}) => {
   return (

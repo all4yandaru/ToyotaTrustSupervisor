@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import NotificationComponent from '../component/section/homeAndTracking/NotificationComponent';
+import NotificationComponent from '../../component/section/homeAndTracking/NotificationComponent';
 
 const NotificationHome = ({navigation}) => {
   return (

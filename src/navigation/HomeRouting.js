@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Home from '../screen/Home';
-import ToolTradeIn from '../screen/ToolsTradeIn';
-import DetailAppraisal from '../screen/DetailAppraisal';
-import NotificationHome from '../screen/Notification';
+import Home from '../screen/homeAndTracking/Home';
+import ToolTradeIn from '../screen/homeAndTracking/ToolsTradeIn';
+import DetailAppraisal from '../screen/homeAndTracking/DetailAppraisal';
+import NotificationHome from '../screen/homeAndTracking/Notification';
 
 const Stack = createStackNavigator();
 const HomeRouting = ({navigation, route}) => {

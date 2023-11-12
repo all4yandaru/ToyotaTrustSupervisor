@@ -1,6 +1,6 @@
 import {Text, View} from 'react-native';
 import React, {Component} from 'react';
-import EditDokumenComponent from '../component/section/profil/EditDokumenComponent';
+import EditDokumenComponent from '../../component/section/profil/EditDokumenComponent';
 
 const EditDokumen = ({navigation}) => {
   return (
