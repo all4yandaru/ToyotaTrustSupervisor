@@ -11,7 +11,6 @@ import ProfilRouting from './ProfilRouting';
 
 const Stack = createNativeStackNavigator();
 const Routing = () => {
-  console.log('Routing');
   return (
     <NavigationContainer>
       <Stack.Navigator

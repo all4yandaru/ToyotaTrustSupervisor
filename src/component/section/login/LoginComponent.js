@@ -11,7 +11,15 @@ import React from 'react';
 import {Colors} from '../../../styles';
 import {InputText, TextBold, TextRegular} from '../../global';
 
-const LoginComponent = ({navigation, route}) => {
+const LoginComponent = ({
+  email,
+  setEmail,
+  password,
+  setPassword,
+  showPassword,
+  setShowPassword,
+  loginSession,
+}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -29,6 +37,9 @@ const LoginComponent = ({navigation, route}) => {
               placeholderText="Alamat Email"
               placeholderTextColor={Colors.DARK_BLUE}
               style={{borderWidth: 0}}
+              isPassword={false}
+              value={email}
+              onChangeText={setEmail}
             />
           </View>
           <View style={styles.inputbox}>
@@ -40,7 +51,11 @@ const LoginComponent = ({navigation, route}) => {
               placeholderText="Password"
               placeholderTextColor={Colors.DARK_BLUE}
               isPassword={true}
+              showPassword={showPassword}
+              setShowPassword={setShowPassword}
               style={{borderWidth: 0}}
+              value={password}
+              onChangeText={setPassword}
             />
           </View>
           <View
@@ -54,9 +69,7 @@ const LoginComponent = ({navigation, route}) => {
               <TextRegular style={styles.resetpw} text="Reset Password" />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('MainRouting')}
-            style={styles.btn}>
+          <TouchableOpacity onPress={() => loginSession()} style={styles.btn}>
             <TextBold style={styles.btntext} text="LOGIN" />
           </TouchableOpacity>
         </View>

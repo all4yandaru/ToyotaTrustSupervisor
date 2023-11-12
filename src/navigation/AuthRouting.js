@@ -4,7 +4,6 @@ import Login from '../screen/login/Login';
 
 const Stack = createStackNavigator();
 const AuthRouting = () => {
-  console.log('AuthRouting');
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
