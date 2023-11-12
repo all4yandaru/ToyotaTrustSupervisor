@@ -144,8 +144,12 @@ const RiwayatComponent = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </View>
-      {activeMenu == 'Trade In' && <RiwayatTradeInComponent />}
-      {activeMenu == 'New Car' && <RiwayatNewCarComponent />}
+      {activeMenu == 'Trade In' && (
+        <RiwayatTradeInComponent navigation={navigation} />
+      )}
+      {activeMenu == 'New Car' && (
+        <RiwayatNewCarComponent navigation={navigation} />
+      )}
     </ScrollView>
   );
 };

@@ -76,7 +76,11 @@ const ProfilComponent = ({navigation, route}) => {
         </View>
         <View style={{marginTop: 16}}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('CekHargaKendaraan')}
+            onPress={() =>
+              navigation.navigate('ProfilRouting', {
+                screen: 'CekHargaKendaraan',
+              })
+            }
             style={{
               weight: 328,
               height: 48,
@@ -119,7 +123,7 @@ const ProfilComponent = ({navigation, route}) => {
             <Text style={styles.boldText}>Data Diri</Text>
             <Text
               onPress={() => {
-                navigation.navigate('EditDataDiri');
+                navigation.navigate('ProfilRouting', {screen: 'EditDataDiri'});
               }}
               style={{color: '#287AE5', fontSize: 12, fontStyle: 'italic'}}>
               Edit Data Diri
@@ -165,7 +169,9 @@ const ProfilComponent = ({navigation, route}) => {
             <Text style={styles.boldText}>Data Rekening</Text>
             <Text
               onPress={() => {
-                navigation.navigate('EditDataRekening');
+                navigation.navigate('ProfilRouting', {
+                  screen: 'EditDataRekening',
+                });
               }}
               style={{color: '#287AE5', fontSize: 12, fontStyle: 'italic'}}>
               Edit Data Rekening
@@ -206,7 +212,7 @@ const ProfilComponent = ({navigation, route}) => {
             <Text style={styles.boldText}>Dokumen</Text>
             <Text
               onPress={() => {
-                navigation.navigate('EditDokumen');
+                navigation.navigate('ProfilRouting', {screen: 'EditDokumen'});
               }}
               style={{color: '#287AE5', fontSize: 12, fontStyle: 'italic'}}>
               Edit Dokumen

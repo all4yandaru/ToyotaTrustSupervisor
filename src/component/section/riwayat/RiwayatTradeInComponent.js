@@ -3,11 +3,14 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {Colors} from '../../../styles';
 import {useNavigation} from '@react-navigation/native';
 
-const RiwayatTradeInComponent = ({}) => {
+const RiwayatTradeInComponent = ({navi}) => {
   const navigation = useNavigation();
   return (
     <View style={{flex: 1, padding: 16}}>
-      <TouchableOpacity onPress={() => navigation.navigate('SummaryTradeIn')}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('RiwayatRouting', {screen: 'SummaryTradeIn'})
+        }>
         <View
           style={{
             height: 150,

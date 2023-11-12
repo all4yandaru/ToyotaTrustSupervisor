@@ -16,7 +16,10 @@ export default function TrackingComponent({navigation}) {
   const FirstRoute = () => {
     return (
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('ToolsTradeIn')}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('TrackingRouting', {screen: 'ToolsTradeIn'})
+          }>
           <View
             style={{
               marginHorizontal: 15,
@@ -231,7 +234,10 @@ export default function TrackingComponent({navigation}) {
   };
   const SecondRoute = () => (
     <View>
-      <TouchableOpacity onPress={() => navigation.navigate('BeliMobil')}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('TrackingRouting', {screen: 'BeliMobil'})
+        }>
         <View
           style={{
             marginHorizontal: 15,

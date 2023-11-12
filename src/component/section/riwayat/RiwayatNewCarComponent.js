@@ -3,12 +3,13 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Colors} from '../../../styles';
 import {useNavigation} from '@react-navigation/native';
 
-const RiwayatNewCarComponent = () => {
+const RiwayatNewCarComponent = ({navigation}) => {
   return (
     <View style={{flex: 1, padding: 16}}>
       <TouchableOpacity
-      // onPress={()=> }
-      >
+        onPress={() =>
+          navigation.navigate('RiwayatRouting', {screen: 'SummaryNewCar'})
+        }>
         <View
           style={{
             height: 150,

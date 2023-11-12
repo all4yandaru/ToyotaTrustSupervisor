@@ -91,7 +91,10 @@ const InsentifComponent = ({navigation}) => {
       <View style={styles.itemContent}>
         <TextBold text="Cabang Bintaro" size={16} color={Colors.DARK_BLUE} />
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate('DetailInsentif')}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('InsentifRouting', {screen: 'DetailInsentif'})
+        }>
         <View style={[styles.ListStyle]}>
           <View style={{alignItems: 'flex-start'}}>
             <TextRegular

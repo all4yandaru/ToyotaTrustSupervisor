@@ -32,7 +32,7 @@ export default function HomeComponent({navigation}) {
         }}>
         <TouchableOpacity
           onPress={() =>
-            navigation.navigate('Tracking', {screen: 'ToolsTradeIn'})
+            navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
           }
           style={{
             padding: 12,
@@ -103,7 +103,10 @@ export default function HomeComponent({navigation}) {
         paddingTop: 12,
         paddingHorizontal: 20,
       }}>
-      <TouchableOpacity onPress={() => navigation.navigate('ToolTradeIn')}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
+        }>
         <View
           style={{
             padding: 12,

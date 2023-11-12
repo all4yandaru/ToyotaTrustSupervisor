@@ -12,7 +12,7 @@ import {Colors} from '../../../styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {TextBold, TextRegular} from '../../global/Text';
 
-const DetailInsentifComponent = () => {
+const DetailInsentifComponent = ({navigation}) => {
   return (
     // <View>
     <ScrollView Style={{flexGrow: 1}}>
@@ -24,7 +24,7 @@ const DetailInsentifComponent = () => {
           backgroundColor: 'white',
           bottom: 10,
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon name="arrow-back" size={25} color={Colors.DARK_BLUE}></Icon>
         </TouchableOpacity>
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
