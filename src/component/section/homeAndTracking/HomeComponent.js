@@ -18,7 +18,12 @@ import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
 import FilterHomeModal from '../../modal/FilterHomeModal';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome6';
 
-export default function HomeComponent({navigation}) {
+export default function HomeComponent({
+  navigation,
+  dashboardData,
+  tradeInData,
+  newCarData,
+}) {
   const [filterModal, setFilterModal] = useState(false);
 
   const FirstRoute = () => {
@@ -30,68 +35,91 @@ export default function HomeComponent({navigation}) {
           paddingTop: 12,
           paddingHorizontal: 20,
         }}>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
-          }
-          style={{
-            padding: 12,
-            backgroundColor: Colors.WHITE,
-            borderRadius: 8,
-            borderWidth: 1,
-            borderColor: Colors.GRAY,
-            height: 125,
-          }}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TextRegular
-              text="TR-092018-246"
-              color={Colors.DARK_BLUE}
-              size={12}
-            />
-            <TextMedium
-              text="Sen, 17 Sep 2018 - 10.30"
-              color={Colors.DARK_BLUE}
-              size={12}
-            />
-          </View>
-          <TextBold
-            text="Avanza G AT 2016"
-            style={{marginTop: 8}}
-            color={Colors.DARK_BLUE}
-            size={14}
-          />
-          <View
-            style={{
-              borderStyle: 'dashed',
-              borderWidth: 1,
-              borderColor: Colors.GRAY,
-              height: 1,
-              marginVertical: 10,
-            }}
-          />
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <View>
-              <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
-              <TextRegular
-                text="Cabang Kelapa Gading"
-                color={Colors.DARK_BLUE}
-                size={10}
-              />
-            </View>
-            <View
+        {tradeInData.length > 0 ? (
+          tradeInData.map((item, i) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
+              }
               style={{
-                backgroundColor: Colors.BLUE,
-                width: 74,
-                height: 20,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 6,
+                padding: 12,
+                backgroundColor: Colors.WHITE,
+                borderRadius: 8,
+                borderWidth: 1,
+                borderColor: Colors.GRAY,
+                height: 125,
                 marginTop: 10,
               }}>
-              <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
-            </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <TextRegular
+                  text="TR-092018-246"
+                  color={Colors.DARK_BLUE}
+                  size={12}
+                />
+                <TextMedium
+                  text="Sen, 17 Sep 2018 - 10.30"
+                  color={Colors.DARK_BLUE}
+                  size={12}
+                />
+              </View>
+              <TextBold
+                text="Avanza G AT 2016"
+                style={{marginTop: 8}}
+                color={Colors.DARK_BLUE}
+                size={14}
+              />
+              <View
+                style={{
+                  borderStyle: 'dashed',
+                  borderWidth: 1,
+                  borderColor: Colors.GRAY,
+                  height: 1,
+                  marginVertical: 10,
+                }}
+              />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <View>
+                  <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
+                  <TextRegular
+                    text="Cabang Kelapa Gading"
+                    color={Colors.DARK_BLUE}
+                    size={10}
+                  />
+                </View>
+                <View
+                  style={{
+                    backgroundColor: Colors.BLUE,
+                    width: 74,
+                    height: 20,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 6,
+                    marginTop: 10,
+                  }}>
+                  <TextRegular
+                    text="New Approval"
+                    color={Colors.WHITE}
+                    size={10}
+                  />
+                </View>
+              </View>
+            </TouchableOpacity>
+          ))
+        ) : (
+          <View style={{alignItems: 'center'}}>
+            <TextMedium
+              text="No Data Avaiable"
+              style={{color: Colors.DARK_GRAY}}></TextMedium>
           </View>
-        </TouchableOpacity>
+        )}
       </View>
     );
   };
@@ -103,70 +131,95 @@ export default function HomeComponent({navigation}) {
         paddingTop: 12,
         paddingHorizontal: 20,
       }}>
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
-        }>
-        <View
-          style={{
-            padding: 12,
-            backgroundColor: Colors.WHITE,
-            borderRadius: 8,
-            borderWidth: 1,
-            borderColor: Colors.GRAY,
-            height: 125,
-          }}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TextRegular
-              text="TR-092018-246"
-              color={Colors.DARK_BLUE}
-              size={12}
-            />
-            <TextMedium
-              text="Sen, 17 Sep 2018 - 10.30"
-              color={Colors.DARK_BLUE}
-              size={12}
-            />
-          </View>
-          <TextBold
-            text="Avanza G AT 2016"
-            style={{marginTop: 8}}
-            color={Colors.DARK_BLUE}
-            size={14}
-          />
-          <View
+      {newCarData.length > 0 ? (
+        newCarData.map((item, i) => (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
+            }
             style={{
-              borderStyle: 'dashed',
+              padding: 12,
+              backgroundColor: Colors.WHITE,
+              borderRadius: 8,
               borderWidth: 1,
               borderColor: Colors.GRAY,
-              height: 1,
-              marginVertical: 10,
-            }}
-          />
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <View>
-              <TextBold text="Handoko" color={Colors.DARK_BLUE} size={12} />
-              <TextRegular
-                text="Cabang Kelapa Gading"
-                color={Colors.DARK_BLUE}
-                size={10}
-              />
-            </View>
+              height: 125,
+              marginTop: 10,
+            }}>
             <View
               style={{
-                backgroundColor: Colors.BLUE,
-                width: 74,
-                height: 20,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 6,
-                marginTop: 10,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
               }}>
-              <TextRegular text="New Approval" color={Colors.WHITE} size={10} />
+              <TextRegular
+                text={item.noNewCar}
+                color={Colors.DARK_BLUE}
+                size={12}
+              />
+              <TextMedium
+                text={item.createdAt}
+                color={Colors.DARK_BLUE}
+                size={12}
+              />
             </View>
-          </View>
+            <TextBold
+              text={item.NewCar.carName}
+              style={{marginTop: 8}}
+              color={Colors.DARK_BLUE}
+              size={14}
+            />
+            <View
+              style={{
+                borderStyle: 'dashed',
+                borderWidth: 1,
+                borderColor: Colors.GRAY,
+                height: 1,
+                marginVertical: 10,
+              }}
+            />
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
+              <View>
+                <TextBold
+                  text={item.SalesBranch.BranchHead.name}
+                  color={Colors.DARK_BLUE}
+                  size={12}
+                />
+                <TextRegular
+                  text={item.branch}
+                  color={Colors.DARK_BLUE}
+                  size={10}
+                />
+              </View>
+              <View
+                style={{
+                  backgroundColor: Colors.BLUE,
+                  width: 74,
+                  height: 20,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: 6,
+                  marginTop: 10,
+                }}>
+                <TextRegular
+                  text={item.approvalStatus}
+                  color={Colors.WHITE}
+                  size={10}
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
+        ))
+      ) : (
+        <View style={{alignItems: 'center'}}>
+          <TextMedium
+            text="No Data Avaiable"
+            style={{color: Colors.DARK_GRAY}}></TextMedium>
         </View>
-      </TouchableOpacity>
+      )}
     </View>
   );
   const renderScene = SceneMap({first: FirstRoute, second: SecondRoute});
@@ -207,7 +260,7 @@ export default function HomeComponent({navigation}) {
           </View>
           <View style={styles.statuscard}>
             <TextRegular
-              text="1 Sep - 12 September 2020"
+              text={dashboardData.mountToDate}
               color={Colors.DARK_BLUE}
               style={styles.period}
             />
@@ -232,7 +285,11 @@ export default function HomeComponent({navigation}) {
                   size={12}
                   color={Colors.DARK_BLUE}
                 />
-                <TextBold text="32" size={20} color={Colors.DARK_BLUE} />
+                <TextBold
+                  text={dashboardData.priceCheckTotal}
+                  size={20}
+                  color={Colors.DARK_BLUE}
+                />
               </View>
               <View style={styles.cardinfo}>
                 <View
@@ -249,7 +306,11 @@ export default function HomeComponent({navigation}) {
                   size={12}
                   color={Colors.DARK_BLUE}
                 />
-                <TextBold text="16" size={20} color={Colors.DARK_BLUE} />
+                <TextBold
+                  text={dashboardData.appraisalTotal}
+                  size={20}
+                  color={Colors.DARK_BLUE}
+                />
               </View>
             </View>
             <View
@@ -269,7 +330,11 @@ export default function HomeComponent({navigation}) {
                   }}
                 />
                 <TextRegular text="PO" size={12} color={Colors.DARK_BLUE} />
-                <TextBold text="12" size={20} color={Colors.DARK_BLUE} />
+                <TextBold
+                  text={dashboardData.POTotal}
+                  size={20}
+                  color={Colors.DARK_BLUE}
+                />
               </View>
               <View style={styles.cardinfo}>
                 <View
@@ -286,7 +351,11 @@ export default function HomeComponent({navigation}) {
                   size={12}
                   color={Colors.DARK_BLUE}
                 />
-                <TextBold text="4" size={20} color={Colors.DARK_BLUE} />
+                <TextBold
+                  text={dashboardData.POValidTotal}
+                  size={20}
+                  color={Colors.DARK_BLUE}
+                />
               </View>
             </View>
           </View>
@@ -322,6 +391,7 @@ export default function HomeComponent({navigation}) {
             />
           </TouchableOpacity>
         </View>
+        {/* ================================================================================== */}
         <TabView
           style={{
             backgroundColor: Colors.GRAY,
@@ -337,7 +407,7 @@ export default function HomeComponent({navigation}) {
               activeColor={Colors.BLUE}
               inactiveColor={Colors.BLACK}
               indicatorStyle={{
-                backgroundColor: Colors.WHITE,
+                backgroundColor: 'transparent',
               }}
               style={{
                 backgroundColor: Colors.WHITE,
