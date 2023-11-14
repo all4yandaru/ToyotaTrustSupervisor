@@ -14,7 +14,7 @@ import {TextBold} from '../../global';
 import RiwayatNewCarComponent from './RiwayatNewCarComponent';
 import RiwayatTradeInComponent from './RiwayatTradeInComponent';
 
-const RiwayatComponent = ({navigation}) => {
+const RiwayatComponent = ({navigation, tradeInParams, newCarParams}) => {
   const [activeMenu, setActiveMenu] = useState('Trade In');
 
   return (
@@ -26,7 +26,7 @@ const RiwayatComponent = ({navigation}) => {
           style={{
             flex: 1,
             padding: 16,
-            height: 135,
+            height: 140,
             backgroundColor: Colors.BLUE,
           }}>
           <TextBold
@@ -100,9 +100,9 @@ const RiwayatComponent = ({navigation}) => {
           <TouchableOpacity
             style={{
               flex: 1,
-              height: 40,
+              height: 50,
               borderWidth: 1,
-              marginTop: -15,
+              marginTop: -20,
               borderColor: Colors.GRAY,
               backgroundColor: Colors.WHITE,
               justifyContent: 'center',
@@ -115,6 +115,7 @@ const RiwayatComponent = ({navigation}) => {
               style={{
                 color: activeMenu == 'Trade In' ? Colors.BLUE : Colors.BLACK,
                 fontWeight: activeMenu == 'Trade In' ? 'bold' : '400',
+                fontSize: 16,
               }}>
               Trade In
             </Text>
@@ -123,9 +124,9 @@ const RiwayatComponent = ({navigation}) => {
           <TouchableOpacity
             style={{
               flex: 1,
-              height: 40,
+              height: 50,
               borderWidth: 1,
-              marginTop: -15,
+              marginTop: -20,
               borderColor: Colors.GRAY,
               backgroundColor: Colors.WHITE,
               justifyContent: 'center',
@@ -138,6 +139,7 @@ const RiwayatComponent = ({navigation}) => {
               style={{
                 color: activeMenu == 'New Car' ? Colors.BLUE : Colors.BLACK,
                 fontWeight: activeMenu == 'New Car' ? 'bold' : '400',
+                fontSize: 16,
               }}>
               New Car
             </Text>
@@ -145,10 +147,16 @@ const RiwayatComponent = ({navigation}) => {
         </View>
       </View>
       {activeMenu == 'Trade In' && (
-        <RiwayatTradeInComponent navigation={navigation} />
+        <RiwayatTradeInComponent
+          navigation={navigation}
+          tradeInParams={tradeInParams}
+        />
       )}
       {activeMenu == 'New Car' && (
-        <RiwayatNewCarComponent navigation={navigation} />
+        <RiwayatNewCarComponent
+          navigation={navigation}
+          newCarParams={newCarParams}
+        />
       )}
     </ScrollView>
   );
