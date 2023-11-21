@@ -16,7 +16,8 @@ import {
   Dimensions,
 } from 'react-native';
 
-const ProfilComponent = ({navigation, route}) => {
+export default function ProfilComponent({profilData, navigation}) {
+  console.log('profilComponent', profilData);
   return (
     <ScrollView>
       <View
@@ -71,7 +72,7 @@ const ProfilComponent = ({navigation, route}) => {
               color: '#FFFFFF',
               marginVertical: 5,
             }}>
-            Setiawan
+            {profilData.profile.name}
           </Text>
         </View>
         <View style={{marginTop: 16}}>
@@ -138,15 +139,19 @@ const ProfilComponent = ({navigation, route}) => {
             <View style={{flex: 1, height: 2, backgroundColor: '#F7F7F7'}} />
           </View>
           <Text style={styles.regularText}>Nama Supervisor</Text>
-          <Text style={styles.semiBoldText}>Setiawan</Text>
+          <Text style={styles.semiBoldText}>{profilData.profile.name}</Text>
           <Text style={styles.regularText}>Cabang</Text>
-          <Text style={styles.semiBoldText}>Cabang Bintaro</Text>
+          <Text style={styles.semiBoldText}>
+            {profilData.profile.SalesBranch.branch}
+          </Text>
           <Text style={styles.regularText}>NRP</Text>
-          <Text style={styles.semiBoldText}>3164684351351510</Text>
+          <Text style={styles.semiBoldText}>{profilData.profile.nrp}</Text>
           <Text style={styles.regularText}>No.Telepon</Text>
-          <Text style={styles.semiBoldText}>081245651200</Text>
+          <Text style={styles.semiBoldText}>{profilData.user.phone}</Text>
           <Text style={styles.regularText}>Tanggal Lahir</Text>
-          <Text style={styles.semiBoldText}>07-04-1980</Text>
+          <Text style={styles.semiBoldText}>
+            {profilData.profile.dateOfBirth}
+          </Text>
         </View>
 
         <View
@@ -186,11 +191,13 @@ const ProfilComponent = ({navigation, route}) => {
             <View style={{flex: 1, height: 2, backgroundColor: '#F7F7F7'}} />
           </View>
           <Text style={styles.regularText}>Bank</Text>
-          <Text style={styles.semiBoldText}>BCA</Text>
+          <Text style={styles.semiBoldText}>{profilData.profile.bankName}</Text>
           <Text style={styles.regularText}>Nama Pemilik Rekening</Text>
-          <Text style={styles.semiBoldText}>Setiawan</Text>
+          <Text style={styles.semiBoldText}>{profilData.profile.name}</Text>
           <Text style={styles.regularText}>No. Rekening</Text>
-          <Text style={styles.semiBoldText}>123456789</Text>
+          <Text style={styles.semiBoldText}>
+            {profilData.profile.bankAccNo}
+          </Text>
         </View>
         <View
           style={{
@@ -227,7 +234,7 @@ const ProfilComponent = ({navigation, route}) => {
             <View style={{flex: 1, height: 2, backgroundColor: '#F7F7F7'}} />
           </View>
           <Text style={styles.regularText}>No.KTP</Text>
-          <Text style={styles.semiBoldText}>123456789012345</Text>
+          <Text style={styles.semiBoldText}>{profilData.profile.noKTP}</Text>
           <Text style={styles.regularText}>Foto KTP</Text>
           <Image
             style={{
@@ -237,10 +244,11 @@ const ProfilComponent = ({navigation, route}) => {
               marginTop: 4,
               marginLeft: 12,
             }}
-            source={require('../../../asset/Image/ktp.jpg')}
+            // source={require('../../../asset/Image/ktp.jpg')}
+            source={{uri: profilData.profile.ktp}}
           />
           <Text style={styles.regularText}>No. NPWP</Text>
-          <Text style={styles.semiBoldText}>123456789012345</Text>
+          <Text style={styles.semiBoldText}>{profilData.profile.noNPWP}</Text>
           <Text style={styles.regularText}>Foto NPWP</Text>
           <Image
             style={{
@@ -250,13 +258,14 @@ const ProfilComponent = ({navigation, route}) => {
               marginTop: 4,
               marginLeft: 12,
             }}
-            source={require('../../../asset/Image/npwp.png')}
+            // source={require('../../../asset/Image/npwp.png')}
+            source={{uri: profilData.profile.npwp}}
           />
         </View>
       </View>
     </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   regularText: {
@@ -279,5 +288,3 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
-
-export default ProfilComponent;
