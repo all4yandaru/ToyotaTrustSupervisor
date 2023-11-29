@@ -25,7 +25,7 @@ export default function TrackingComponent({
             navigation.navigate('TrackingRouting', {screen: 'ToolsTradeIn'})
           }>
           {dataTradeIn.length > 0 ? (
-            dataTradeIn.map(item => (
+            dataTradeIn.map((item, i) => (
               <View
                 style={{
                   marginHorizontal: 15,
@@ -55,7 +55,7 @@ export default function TrackingComponent({
                 <View style={{height: 8}} />
                 <TextBold
                   color={Colors.DARK_BLUE}
-                  text={item.ApprovalTradeIn.Appraisal.carDetail[i].value}
+                  text={item.ApprovalTradeIn.Appraisal.carDetail[5].value}
                 />
                 <View style={{height: 12}} />
                 <View

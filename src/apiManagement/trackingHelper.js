@@ -1,12 +1,12 @@
 import API from './apiHelper';
 
-const tradeInHelper = async params => {
-  return API('api/v1/trade-in/tracking', {
+const tradeInHelper = async token => {
+  return API('api/v1/approval/trade-in/tracking', {
     method: 'GET',
     head: {
       'Content-Type': 'application/json',
+      Authorization: token,
     },
-    body: params,
   })
     .then(response => {
       return response;
@@ -16,13 +16,13 @@ const tradeInHelper = async params => {
     });
 };
 
-const newCarHelper = async params => {
-  return API('api/v1/new-car/tracking', {
+const newCarHelper = async token => {
+  return API('api/v1/approval/new-car/tracking', {
     method: 'GET',
     head: {
       'Content-Type': 'application/json',
+      Authorization: token,
     },
-    body: params,
   })
     .then(response => {
       return response;

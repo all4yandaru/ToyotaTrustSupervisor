@@ -8,28 +8,31 @@ import {useIsFocused} from '@react-navigation/native';
 const Tracking = ({navigation, route}) => {
   const {session} = useSelector(state => state.session);
   const {account} = useSelector(state => state.account);
-  const {dataTradeIn, setDataTradeIn} = useState([]);
-  const {dataNewCar, setDataNewCar} = useState([]);
+  const [dataTradeIn, setDataTradeIn] = useState({});
+  const [dataNewCar, setDataNewCar] = useState({});
   const isFocused = useIsFocused();
+
   useEffect(() => {
-    setTimeout(() => {
-      if (session.token && account) {
-        setTradeInProcess();
-        setNewCarProcess();
-      } else {
-        navigation.replace('AuthRouting');
-      }
-    }, 1000);
-  });
+    if (session.token && account) {
+      setTradeInProcess();
+      setNewCarProcess();
+    } else {
+      navigation.replace('AuthRouting');
+    }
+  }, [isFocused]);
 
   const setTradeInProcess = async () => {
     const response = await trackingHelper.tradeInHelper(session.token);
+    console.log('trade in: ', response);
     setDataTradeIn(response);
   };
+
   const setNewCarProcess = async () => {
     const response = await trackingHelper.newCarHelper(session.token);
+    console.log('new car: ', response);
     setDataNewCar(response);
   };
+
   return (
     <View style={{flex: 1}}>
       <TrackingComponent
