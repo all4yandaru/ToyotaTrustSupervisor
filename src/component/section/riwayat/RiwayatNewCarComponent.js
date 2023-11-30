@@ -17,7 +17,7 @@ const RiwayatNewCarComponent = ({navigation, newCarParams}) => {
           onPress={() =>
             navigation.navigate('RiwayatRouting', {
               screen: 'SummaryNewCar',
-              params: {selectedItem: item},
+              params: item,
             })
           }>
           <View

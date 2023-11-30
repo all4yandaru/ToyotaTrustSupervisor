@@ -13,7 +13,6 @@ import {Colors} from '../../../styles';
 import {TextBold, TextRegular} from '../../global';
 
 const DetailAppraisalComponent = ({navigation, detailAppraisalData}) => {
-  console.log('detail data: ', detailAppraisalData);
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <ImageBackground
