@@ -12,8 +12,9 @@ import {
   Dimensions,
 } from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
+import moment from 'moment/moment';
 
-export default function ToolTradeInComponent({navigation}) {
+export default function ToolTradeInComponent({navigation, toolsTradeInData}) {
   const activeOpacity = 0.8;
 
   const FirstRoute = () => {
@@ -317,12 +318,16 @@ export default function ToolTradeInComponent({navigation}) {
           <TextRegular
             size={12}
             color={Colors.DARK_GRAY}
-            text="TR-092018-246"
+            text={toolsTradeInData.approvalTradeIn.Appraisal.Booking.noBooking}
           />
           <TextMedium
             color={Colors.DARK_BLUE}
             size={12}
-            text="Sen,17 Sep 2018-10:30"
+            text={moment(
+              new Date(
+                toolsTradeInData.approvalTradeIn.Appraisal.Booking.bookingTime,
+              ),
+            ).format('ddd, DD MMM YYYY, HH:mm')}
           />
         </View>
         <View style={{height: 22}} />
@@ -337,12 +342,22 @@ export default function ToolTradeInComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Mobil" />
-            <TextBold color={Colors.DARK_BLUE} text="AVANZA G AT 2016" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={
+                toolsTradeInData.approvalTradeIn.Appraisal.carDetail[5].value
+              }
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Plat Nomor" />
-            <TextBold color={Colors.DARK_BLUE} text="B 1234 TES" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={
+                toolsTradeInData.approvalTradeIn.Appraisal.carDetail[7].value
+              }
+            />
           </View>
           <View style={{height: 16}} />
           <TouchableOpacity
@@ -365,7 +380,10 @@ export default function ToolTradeInComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Mobil" />
-            <TextBold color={Colors.DARK_BLUE} text="RUSH S AT  TRD" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={toolsTradeInData.approvalTradeIn.NewCar.carName}
+            />
           </View>
           <View style={{height: 6}} />
           <TouchableOpacity activeOpacity={activeOpacity}>
@@ -379,7 +397,10 @@ export default function ToolTradeInComponent({navigation}) {
           <View style={{height: 10}} />
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="OTR" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 276.600.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.approvalTradeIn.NewCar.otr}`}
+            />
           </View>
           <View style={{height: 16}} />
         </View>
@@ -395,17 +416,26 @@ export default function ToolTradeInComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Harga penawaran" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 78.500.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[1].price}`}
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Ruang Nego" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 3.000.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[6].price}`}
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="MRP (Harga Max)" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 81.500.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[10].price}`}
+            />
           </View>
         </View>
         <View style={{height: 16}} />
@@ -416,7 +446,10 @@ export default function ToolTradeInComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Diskon Kacab" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 2.000.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[7].productBonuses[0].price}`}
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
@@ -444,7 +477,10 @@ export default function ToolTradeInComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Proyeksi Harga Jual" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 120.000.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[2].price}`}
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
@@ -454,12 +490,18 @@ export default function ToolTradeInComponent({navigation}) {
               numberOfLines={2}
               text="COGS (harga beli+{biaya rekondisi)+OPEX"
             />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 109.550.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[3].price}`}
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Proyeksi NBPT Trust" />
-            <TextBold color={Colors.DARK_BLUE} text="Rp 10.450.000" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={`Rp ${toolsTradeInData.calculation[4].price}`}
+            />
           </View>
         </View>
         <TextBold

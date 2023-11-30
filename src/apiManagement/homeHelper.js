@@ -64,4 +64,20 @@ const beliMobil = async (token, id) => {
     });
 };
 
-export default {dashboards, newCar, tradeIn, beliMobil};
+const tradeInDetail = async (token, id) => {
+  return API(`api/v1/approval/trade-in/${id}`, {
+    method: 'GET',
+    head: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  })
+    .then(response => {
+      return response;
+    })
+    .catch(err => {
+      return err;
+    });
+};
+
+export default {dashboards, newCar, tradeIn, beliMobil, tradeInDetail};

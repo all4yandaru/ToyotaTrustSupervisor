@@ -10,9 +10,9 @@ import {useIsFocused} from '@react-navigation/native';
 const Home = ({navigation}) => {
   const {session} = useSelector(state => state.session);
   const {account} = useSelector(state => state.account);
-  const [dashboards, setdashboards] = useState({});
-  const [tradeIn, settradeIn] = useState({});
-  const [newCars, setnewCars] = useState({});
+  const [dashboards, setdashboards] = useState(null);
+  const [tradeIn, settradeIn] = useState(null);
+  const [newCars, setnewCars] = useState(null);
 
   const isFocused = useIsFocused();
 
@@ -40,12 +40,14 @@ const Home = ({navigation}) => {
 
   return (
     <View style={{flex: 1}}>
-      <HomeComponent
-        navigation={navigation}
-        dashboardData={dashboards}
-        tradeInData={tradeIn}
-        newCarData={newCars}
-      />
+      {dashboards && tradeIn && newCars && (
+        <HomeComponent
+          navigation={navigation}
+          dashboardData={dashboards}
+          tradeInData={tradeIn}
+          newCarData={newCars}
+        />
+      )}
     </View>
   );
 };

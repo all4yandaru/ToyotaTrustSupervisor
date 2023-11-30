@@ -20,12 +20,15 @@ export default function TrackingComponent({
   const FirstRoute = () => {
     return (
       <View>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('TrackingRouting', {screen: 'ToolsTradeIn'})
-          }>
-          {dataTradeIn.length > 0 ? (
-            dataTradeIn.map((item, i) => (
+        {dataTradeIn.length > 0 ? (
+          dataTradeIn.map((item, i) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('TrackingRouting', {
+                  screen: 'ToolsTradeIn',
+                  params: {item: item, from: 'track'},
+                })
+              }>
               <View
                 style={{
                   marginHorizontal: 15,
@@ -109,16 +112,16 @@ export default function TrackingComponent({
                   </View>
                 </View>
               </View>
-            ))
-          ) : (
-            <View style={{alignItems: 'center'}}>
-              <TextMedium
-                text={'No Data Available'}
-                style={{color: Colors.DARK_GRAY}}
-              />
-            </View>
-          )}
-        </TouchableOpacity>
+            </TouchableOpacity>
+          ))
+        ) : (
+          <View style={{alignItems: 'center'}}>
+            <TextMedium
+              text={'No Data Available'}
+              style={{color: Colors.DARK_GRAY}}
+            />
+          </View>
+        )}
       </View>
     );
   };
