@@ -12,7 +12,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../../../styles';
 import {TextBold, TextRegular} from '../../global';
 
-const DetailAppraisalComponent = ({route, navigation}) => {
+const DetailAppraisalComponent = ({navigation, detailAppraisalData}) => {
+  console.log('detail data: ', detailAppraisalData);
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <ImageBackground
@@ -38,12 +39,14 @@ const DetailAppraisalComponent = ({route, navigation}) => {
         {/* Bagian atas */}
         <View style={{flexDirection: 'row'}}>
           <Image
-            source={require('../../../asset/Image/real_car.png')}
+            source={{
+              uri: detailAppraisalData.appraisal.photoExterior[1].imageUrl,
+            }}
             style={localStyles.carImage}
           />
           <View style={{flex: 1, marginLeft: 8}}>
             <TextBold
-              text={'Avanza tipe \nG/AT 2015'}
+              text={detailAppraisalData.appraisal.carDetail[5].value}
               color={Colors.DARK_BLUE}
               size={16}
             />
@@ -54,7 +57,11 @@ const DetailAppraisalComponent = ({route, navigation}) => {
               color={Colors.BLUE}
               style={{marginTop: 8}}
             />
-            <TextBold text={'76.500.000'} size={16} color={Colors.BLUE} />
+            <TextBold
+              text={detailAppraisalData.appraisal.finalPrice.hargaFinal}
+              size={16}
+              color={Colors.BLUE}
+            />
           </View>
         </View>
 
@@ -110,15 +117,30 @@ const DetailAppraisalComponent = ({route, navigation}) => {
             style={{alignSelf: 'center', paddingLeft: 8}}
           />
         </View>
-        <TextBetween textLeft={'Nomor Polisi'} textRight={'AB 5921 YV'} />
+        <TextBetween
+          textLeft={'Nomor Polisi'}
+          textRight={detailAppraisalData.appraisal.carDetail[7].value}
+        />
         <TextBetween
           textLeft={'Nomor Mesin'}
-          textRight={'161613516156451325'}
+          textRight={detailAppraisalData.appraisal.carDetail[8].value}
         />
-        <TextBetween textLeft={'Nomor Rangka'} textRight={'72149GHG68'} />
-        <TextBetween textLeft={'Warna Eksterior'} textRight={'Putih'} />
-        <TextBetween textLeft={'Jarak Tempuh'} textRight={'40.000'} />
-        <TextBetween textLeft={'Tahun STNK'} textRight={'2017'} />
+        <TextBetween
+          textLeft={'Nomor Rangka'}
+          textRight={detailAppraisalData.appraisal.carDetail[9].value}
+        />
+        <TextBetween
+          textLeft={'Warna Eksterior'}
+          textRight={detailAppraisalData.appraisal.carDetail[10].value}
+        />
+        <TextBetween
+          textLeft={'Jarak Tempuh'}
+          textRight={detailAppraisalData.appraisal.carDetail[11].value}
+        />
+        <TextBetween
+          textLeft={'Tahun STNK'}
+          textRight={detailAppraisalData.appraisal.carDetail[6].value}
+        />
         <TextBetweenHarga
           textLeft={'Kilometer'}
           textRight={'Diatas 100.000 Km'}
@@ -229,7 +251,7 @@ const DetailAppraisalComponent = ({route, navigation}) => {
             style={{alignSelf: 'center'}}
           />
           <TextBold
-            text={'-Rp 6.400.000'}
+            text={`-Rp ${detailAppraisalData.appraisal.finalPrice.hargaPotong}`}
             color={Colors.RED}
             size={14}
             style={{alignSelf: 'center'}}
@@ -250,7 +272,7 @@ const DetailAppraisalComponent = ({route, navigation}) => {
             style={{alignSelf: 'center'}}
           />
           <TextBold
-            text={'87.900.000'}
+            text={`Rp ${detailAppraisalData.appraisal.finalPrice.hargaMobil}`}
             color={Colors.DARK_BLUE}
             size={14}
             style={{alignSelf: 'center'}}
@@ -274,7 +296,7 @@ const DetailAppraisalComponent = ({route, navigation}) => {
           style={{alignSelf: 'center'}}
         />
         <TextBold
-          text={'87.900.000'}
+          text={`Rp ${detailAppraisalData.appraisal.finalPrice.hargaFinalAfterNego}`}
           color={Colors.DARK_BLUE}
           size={16}
           style={{alignSelf: 'center'}}
@@ -291,15 +313,21 @@ const DetailAppraisalComponent = ({route, navigation}) => {
         />
         <HorizontalStrikeLine />
 
-        <TextBetween textLeft={'Pemilik Kendaraan'} textRight={'Budi Sarudi'} />
+        <TextBetween
+          textLeft={'Pemilik Kendaraan'}
+          textRight={detailAppraisalData.appraisal.carDetail[0].value}
+        />
         <HorizontalStrikeLine />
 
-        <TextBetween textLeft={'No. HP Customer'} textRight={'085212457896'} />
+        <TextBetween
+          textLeft={'No. HP Customer'}
+          textRight={detailAppraisalData.appraisal.carDetail[1].value}
+        />
         <HorizontalStrikeLine />
 
         <TextBetween
           textLeft={'E-mail Customer'}
-          textRight={'budi@gmail.com'}
+          textRight={detailAppraisalData.appraisal.carDetail[2].value}
         />
       </View>
     </ScrollView>

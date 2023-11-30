@@ -80,4 +80,27 @@ const tradeInDetail = async (token, id) => {
     });
 };
 
-export default {dashboards, newCar, tradeIn, beliMobil, tradeInDetail};
+const detailAppraisal = async (token, id) => {
+  return API(`api/v1/approval/trade-in/appraisal-final/${id}`, {
+    method: 'GET',
+    head: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  })
+    .then(response => {
+      return response;
+    })
+    .catch(err => {
+      return err;
+    });
+};
+
+export default {
+  dashboards,
+  newCar,
+  tradeIn,
+  beliMobil,
+  tradeInDetail,
+  detailAppraisal,
+};

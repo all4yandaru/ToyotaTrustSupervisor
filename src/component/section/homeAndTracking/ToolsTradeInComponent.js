@@ -371,7 +371,9 @@ export default function ToolTradeInComponent({navigation, toolsTradeInData}) {
                 alignItems: 'center',
               },
             ]}
-            onPress={() => navigation.navigate('DetailAppraisal')}>
+            onPress={() =>
+              navigation.navigate('DetailAppraisal', toolsTradeInData)
+            }>
             <TextMedium color="white" text="Lihat Detail Appraisal" />
             <Icons name="arrow-right" color={Colors.WHITE} size={12} />
           </TouchableOpacity>

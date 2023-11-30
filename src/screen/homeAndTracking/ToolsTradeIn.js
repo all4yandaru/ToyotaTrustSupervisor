@@ -6,7 +6,6 @@ import {useIsFocused} from '@react-navigation/native';
 import homeHelper from '../../apiManagement/homeHelper';
 
 const ToolsTradeIn = ({navigation, route}) => {
-  console.log('params: ', route.params);
   const {session} = useSelector(state => state.session);
   const [toolsTradeInData, setToolsTradeInData] = useState(null);
   const isFocused = useIsFocused();
