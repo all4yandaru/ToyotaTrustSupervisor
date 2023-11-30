@@ -5,7 +5,11 @@ import {ScrollView, TouchableOpacity, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import Icons from 'react-native-vector-icons/Entypo';
 
-export default function BeliMobilUiApprovedComponent({navigation}) {
+export default function BeliMobilUiApprovedComponent({
+  navigation,
+  beliMobilData,
+}) {
+  console.log('data: ', beliMobilData);
   return (
     <View style={{flex: 1, backgroundColor: Colors.GRAY}}>
       <View
@@ -40,12 +44,18 @@ export default function BeliMobilUiApprovedComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Nama" />
-            <TextBold color={Colors.DARK_BLUE} text="NANDO DWIKI SATRIA" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={beliMobilData.approvalNewCar.customerName}
+            />
           </View>
           <View style={{height: 16}} />
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="No.Hp" />
-            <TextBold color={Colors.DARK_BLUE} text="082245884655" />
+            <TextBold
+              color={Colors.DARK_BLUE}
+              text={beliMobilData.approvalNewCar.phone}
+            />
           </View>
         </View>
         <View style={{height: 8}} />
@@ -60,11 +70,17 @@ export default function BeliMobilUiApprovedComponent({navigation}) {
         <View style={styles.body}>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Mobil" />
-            <TextMedium color={Colors.DARK_BLUE} text="Rush S AT TRD" />
+            <TextMedium
+              color={Colors.DARK_BLUE}
+              text={beliMobilData.approvalNewCar.NewCar.carName}
+            />
           </View>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="OTR" />
-            <TextMedium color={Colors.BLUE} text="Rp 276.500.000" />
+            <TextMedium
+              color={Colors.BLUE}
+              text={beliMobilData.approvalNewCar.NewCar.otr}
+            />
           </View>
         </View>
         <View style={{height: 8}} />
@@ -73,18 +89,19 @@ export default function BeliMobilUiApprovedComponent({navigation}) {
         </View>
         <View style={{height: 2}} />
         <View style={styles.body}>
-          <View style={[styles.bodySection, {marginVertical: 12}]}>
+          <TextMedium color={Colors.DARK_BLUE} text="N/A" />
+          {/* <View style={[styles.bodySection, {marginVertical: 12}]}>
             <TextMedium color={Colors.DARK_BLUE} text="Request Disc." />
             <TextBold color={Colors.BLUE} text="Rp 15.000.000" />
           </View>
           <View style={styles.bodySection}>
             <TextMedium color={Colors.DARK_BLUE} text="Akumulasi OTR" />
             <TextMedium color={Colors.DARK_BLUE} text="Rp 235.000.000" />
-          </View>
+          </View> */}
           <View style={{height: 12}} />
         </View>
         <View style={{height: 8}} />
-        <View style={styles.body}>
+        {/* <View style={styles.body}>
           <TextBold size={12} color={Colors.GREEN} text="Approved by COO" />
           <View style={{height: 3}} />
           <View
@@ -119,7 +136,7 @@ export default function BeliMobilUiApprovedComponent({navigation}) {
               />
             </View>
           </View>
-        </View>
+        </View> */}
         <View style={{height: 48}} />
       </ScrollView>
     </View>

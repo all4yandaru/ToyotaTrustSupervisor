@@ -39,7 +39,10 @@ export default function HomeComponent({
           tradeInData.map((item, i) => (
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
+                navigation.navigate('HomeRouting', {
+                  screen: 'ToolTradeIn',
+                  params: item,
+                })
               }
               style={{
                 padding: 12,
@@ -135,7 +138,10 @@ export default function HomeComponent({
         newCarData.map((item, i) => (
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('HomeRouting', {screen: 'ToolTradeIn'})
+              navigation.navigate('HomeRouting', {
+                screen: 'BeliMobil',
+                params: item,
+              })
             }
             style={{
               padding: 12,

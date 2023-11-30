@@ -4,6 +4,7 @@ import Home from '../screen/homeAndTracking/Home';
 import ToolTradeIn from '../screen/homeAndTracking/ToolsTradeIn';
 import DetailAppraisal from '../screen/homeAndTracking/DetailAppraisal';
 import NotificationHome from '../screen/homeAndTracking/Notification';
+import BeliMobil from '../screen/homeAndTracking/BeliMobilUi';
 
 const Stack = createStackNavigator();
 const HomeRouting = ({navigation, route}) => {
@@ -14,6 +15,7 @@ const HomeRouting = ({navigation, route}) => {
       <Stack.Screen name="HomeScreen" component={Home} />
       <Stack.Screen name="ToolTradeIn" component={ToolTradeIn} />
       <Stack.Screen name="DetailAppraisal" component={DetailAppraisal} />
+      <Stack.Screen name="BeliMobil" component={BeliMobil} />
       <Stack.Screen name="Notification" component={NotificationHome} />
     </Stack.Navigator>
   );
