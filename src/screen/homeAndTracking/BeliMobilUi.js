@@ -12,12 +12,24 @@ const BeliMobil = ({navigation, route}) => {
 
   useEffect(() => {
     if (route.params) {
-      BeliMobilDataProcess();
+      if (route.params.from == 'home') {
+        BeliMobilDataHomeProcess();
+      } else {
+        BeliMobilDataTrackProcess();
+      }
     }
   }, [isFocused]);
 
-  const BeliMobilDataProcess = async () => {
-    const res = await homeHelper.beliMobil(session.token, route.params.id);
+  const BeliMobilDataHomeProcess = async () => {
+    const res = await homeHelper.beliMobil(session.token, route.params.item.id);
+    setBeliMobilData(res);
+  };
+
+  const BeliMobilDataTrackProcess = async () => {
+    const res = await homeHelper.beliMobil(
+      session.token,
+      route.params.item.ApprovalNewCar.id,
+    );
     setBeliMobilData(res);
   };
 

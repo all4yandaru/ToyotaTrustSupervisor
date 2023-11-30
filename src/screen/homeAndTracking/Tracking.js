@@ -8,8 +8,8 @@ import {useIsFocused} from '@react-navigation/native';
 const Tracking = ({navigation, route}) => {
   const {session} = useSelector(state => state.session);
   const {account} = useSelector(state => state.account);
-  const [dataTradeIn, setDataTradeIn] = useState({});
-  const [dataNewCar, setDataNewCar] = useState({});
+  const [dataTradeIn, setDataTradeIn] = useState(null);
+  const [dataNewCar, setDataNewCar] = useState(null);
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -23,23 +23,23 @@ const Tracking = ({navigation, route}) => {
 
   const setTradeInProcess = async () => {
     const response = await trackingHelper.tradeInHelper(session.token);
-    console.log('trade in: ', response);
     setDataTradeIn(response);
   };
 
   const setNewCarProcess = async () => {
     const response = await trackingHelper.newCarHelper(session.token);
-    console.log('new car: ', response);
     setDataNewCar(response);
   };
 
   return (
     <View style={{flex: 1}}>
-      <TrackingComponent
-        navigation={navigation}
-        dataTradeIn={dataTradeIn}
-        dataNewCar={dataNewCar}
-      />
+      {dataTradeIn && dataNewCar && (
+        <TrackingComponent
+          navigation={navigation}
+          dataTradeIn={dataTradeIn}
+          dataNewCar={dataNewCar}
+        />
+      )}
     </View>
   );
 };

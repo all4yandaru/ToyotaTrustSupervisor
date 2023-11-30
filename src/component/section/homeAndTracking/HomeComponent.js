@@ -41,7 +41,7 @@ export default function HomeComponent({
               onPress={() =>
                 navigation.navigate('HomeRouting', {
                   screen: 'ToolTradeIn',
-                  params: item,
+                  params: {item: item, from: 'home'}, // to be continued
                 })
               }
               style={{
@@ -140,7 +140,7 @@ export default function HomeComponent({
             onPress={() =>
               navigation.navigate('HomeRouting', {
                 screen: 'BeliMobil',
-                params: item,
+                params: {item: item, from: 'home'},
               })
             }
             style={{

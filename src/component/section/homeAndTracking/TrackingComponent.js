@@ -124,12 +124,15 @@ export default function TrackingComponent({
   };
   const SecondRoute = () => (
     <View>
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('TrackingRouting', {screen: 'BeliMobil'})
-        }>
-        {dataNewCar.length > 0 ? (
-          dataNewCar.map(item => (
+      {dataNewCar.length > 0 ? (
+        dataNewCar.map(item => (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('TrackingRouting', {
+                screen: 'BeliMobil',
+                params: {item: item, from: 'track'},
+              })
+            }>
             <View
               style={{
                 marginHorizontal: 15,
@@ -205,16 +208,16 @@ export default function TrackingComponent({
                 </View>
               </View>
             </View>
-          ))
-        ) : (
-          <View style={{alignItems: 'center'}}>
-            <TextMedium
-              text={'No Data Available'}
-              style={{color: Colors.DARK_GRAY}}
-            />
-          </View>
-        )}
-      </TouchableOpacity>
+          </TouchableOpacity>
+        ))
+      ) : (
+        <View style={{alignItems: 'center'}}>
+          <TextMedium
+            text={'No Data Available'}
+            style={{color: Colors.DARK_GRAY}}
+          />
+        </View>
+      )}
     </View>
   );
 
