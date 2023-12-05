@@ -11,8 +11,8 @@ const Riwayat = ({navigation, route}) => {
   const {session} = useSelector(state => state.session);
   const {account} = useSelector(state => state.account);
 
-  const [riwayatTradeIn, setRiwayatTradeIn] = useState([]);
-  const [riwayatNewCar, setRiwayatNewCar] = useState([]);
+  const [riwayatTradeIn, setRiwayatTradeIn] = useState(null);
+  const [riwayatNewCar, setRiwayatNewCar] = useState(null);
 
   useEffect(() => {
     if (session.token && account) {
