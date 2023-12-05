@@ -13,6 +13,7 @@ import AppIcon from 'react-native-vector-icons/FontAwesome';
 import {useIsFocused} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import riwayatHelper from '../../../apiManagement/riwayatHelper';
+import moment from 'moment/moment';
 
 const SummaryTradeIn = ({navigation, route}) => {
   const {session} = useSelector(state => state.session);
@@ -65,7 +66,9 @@ const SummaryTradeIn = ({navigation, route}) => {
             style={{alignItems: 'center'}}
           />
           <TextRegular
-            text={TradeInData.approvalTradeIn.Appraisal.Booking.bookingTime}
+            text={moment(
+              new Date(TradeInData.approvalTradeIn.Appraisal.Booking.bookingTime),
+            ).format('ddd, DD MMM YYYY, HH:mm')}
             size={15}
             color={Colors.DARK_BLUE}
           />

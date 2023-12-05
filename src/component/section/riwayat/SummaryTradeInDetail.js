@@ -13,6 +13,7 @@ import AppIcon from 'react-native-vector-icons/FontAwesome';
 import {useIsFocused} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import riwayatHelper from '../../../apiManagement/riwayatHelper';
+import moment from 'moment/moment';
 
 const SummaryDetailTradeIn = ({navigation, route}) => {
   const {session} = useSelector(state => state.session);
@@ -29,13 +30,13 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
   }, [isFocused]);
 
   const TradeInDataProcess = async () => {
-    console.log('route: ', route.params.TradeInData);
     const res = await riwayatHelper.SummaryDetailTradeIn(
       session.token,
-      route.params.TradeInData.approvalTradeIn.Appraisal.appraisalId,
+      route.params.TradeInData.approvalTradeIn.Appraisal.id,
     );
     setTradeInData(res);
-    console.log('the data: ', res);
+    console.log('route data: ', route.params);
+    console.log('setTradeInData: ', res);
   };
   return (
     TradeInData && (
@@ -61,15 +62,17 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
             />
           </View>
           {/* <View style={styles.notifNoDeal}> */}
-          <View style={styles.notifDeal}>
+          <View style={[styles.notifDeal, {backgroundColor: route.params.TradeInData.approvalTradeIn.approvalStatus=="Deal"?Colors.LIGHT_GREEN:Colors.RED}]}>
             <TextMedium
-              text={'TradeInData.approvalTradeIn.approvalStatus'}
+              text={route.params.TradeInData.approvalTradeIn.approvalStatus}
               size={15}
               color={Colors.WHITE}
             />
             {/* <TextMedium text="No Deal" size={15} color={Colors.WHITE} /> */}
             <TextRegular
-              text="19 Agustus 2020 - 15.43"
+              text={moment(
+                new Date(route.params.TradeInData.approvalTradeIn.Appraisal.Booking.bookingTime),
+              ).format('ddd, DD MMM YYYY, HH:mm')}
               size={13}
               color={Colors.WHITE}
             />
