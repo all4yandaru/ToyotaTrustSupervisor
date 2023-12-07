@@ -62,7 +62,17 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
             />
           </View>
           {/* <View style={styles.notifNoDeal}> */}
-          <View style={[styles.notifDeal, {backgroundColor: route.params.TradeInData.approvalTradeIn.approvalStatus=="Deal"?Colors.LIGHT_GREEN:Colors.RED}]}>
+          <View
+            style={[
+              styles.notifDeal,
+              {
+                backgroundColor:
+                  route.params.TradeInData.approvalTradeIn.approvalStatus ==
+                  'Deal'
+                    ? Colors.LIGHT_GREEN
+                    : Colors.RED,
+              },
+            ]}>
             <TextMedium
               text={route.params.TradeInData.approvalTradeIn.approvalStatus}
               size={15}
@@ -71,7 +81,9 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
             {/* <TextMedium text="No Deal" size={15} color={Colors.WHITE} /> */}
             <TextRegular
               text={moment(
-                new Date(route.params.TradeInData.approvalTradeIn.Appraisal.Booking.bookingTime),
+                new Date(
+                  route.params.TradeInData.approvalTradeIn.Appraisal.Booking.bookingTime,
+                ),
               ).format('ddd, DD MMM YYYY, HH:mm')}
               size={13}
               color={Colors.WHITE}
@@ -97,7 +109,10 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
           </View>
           <View style={styles.headCard}>
             <TextMedium
-              text="TR-092018-246"
+              text={
+                route.params.TradeInData.approvalTradeIn.Appraisal.Booking
+                  .noBooking
+              }
               size={15}
               color={Colors.MEDIUM_GRAY}
             />
@@ -122,7 +137,7 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
                 color={Colors.DARK_BLUE}
               />
               <TextBold
-                text="NANDO DWIKI SATRIA"
+                text={TradeInData.appraisal.carDetail[0].value}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
@@ -137,7 +152,7 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
               }}>
               <TextMedium text="No.Hp" size={15} color={Colors.DARK_BLUE} />
               <TextMedium
-                text="0822453820505"
+                text={TradeInData.appraisal.carDetail[1].value}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
@@ -155,12 +170,14 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
                 marginBottom: 20,
               }}>
               <TextBold
-                text="AVANZA G AT 2016"
+                text={
+                  route.params.TradeInData.approvalTradeIn.Appraisal.carName
+                }
                 size={15}
                 color={Colors.DARK_BLUE}
               />
               <TextBold
-                text="RP. 81.500.000"
+                text={`Rp ${route.params.TradeInData.approvalTradeIn.Appraisal.finalPrice.hargaMobil}`}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
@@ -169,12 +186,12 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
             <View
               style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               <TextBold
-                text="Rush S AT TRD"
+                text={route.params.TradeInData.approvalTradeIn.NewCar.carName}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
               <TextBold
-                text="RP. 276.600.000"
+                text={`Rp ${route.params.TradeInData.approvalTradeIn.NewCar.otr}`}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
@@ -196,7 +213,7 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
               }}>
               <TextMedium text="Diskon" size={15} color={Colors.DARK_BLUE} />
               <TextBold
-                text="RP. 9.000.000"
+                text={`Rp ${route.params.TradeInData.approvalTradeIn.Appraisal.finalPrice.hargaPotong}`}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
@@ -213,7 +230,7 @@ const SummaryDetailTradeIn = ({navigation, route}) => {
                 color={Colors.DARK_BLUE}
               />
               <TextBold
-                text="RP. 3.000.000"
+                text={`Rp ${route.params.TradeInData.calculation[7].price}`}
                 size={15}
                 color={Colors.DARK_BLUE}
               />
